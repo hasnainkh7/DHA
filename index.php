@@ -1,4 +1,7 @@
-<?php include("inc/header.php"); ?>
+<?php
+$curPpageTitle = "Dashboard"; 
+include("inc/header.php");
+?>
 
 
 <div class="row">
