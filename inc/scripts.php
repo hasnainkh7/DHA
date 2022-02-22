@@ -3,6 +3,8 @@
 	<script src="./vendor/chart.js/Chart.bundle.min.js"></script>
     <script src="./js/custom.min.js"></script>
 	<script src="./js/deznav-init.js"></script>
+	<script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./js/plugins-init/datatables.init.js"></script>
 	<script src="./vendor/owl-carousel/owl.carousel.js"></script>
 	
 	<!-- Chart piety plugin files -->

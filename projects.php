@@ -37,7 +37,7 @@ include("inc/header.php");
                             </div>
                         </div>
                     </div>
-                    <div class="effect bg-secondary"></div>
+                    <div class="effect bg-success"></div>
                 </div>
                 </a>
             </div>
@@ -52,7 +52,7 @@ include("inc/header.php");
                             </div>
                         </div>
                     </div>
-                    <div class="effect bg-info"></div>
+                    <div class="effect bg-success"></div>
                 </div>
                 </a>
             </div>
