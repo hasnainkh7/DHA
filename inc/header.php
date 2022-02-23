@@ -27,10 +27,15 @@ include("head.php");
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <!-- <a href="index.php" class="brand-logo">
                 <h4 class="text-black font-w600 fs-22"><span class="text-primary">Property</span><br>Information Portal</h4>
-            </a>
+            </a> -->
 
+            <a href="index.php" class="brand-logo">
+                <img class="logo-abbr" src="./images/logo1.png" alt="">
+                <img class="logo-compact" src="./images/logo1.png" alt="">
+                <img class="brand-title" src="./images/logo-text1.png" alt="">
+            </a>
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
