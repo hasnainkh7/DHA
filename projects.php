@@ -6,8 +6,15 @@ include("inc/header.php");
 
 
 <div class="row">
-    <div class="col-md-12 mb-3">
+
+    <div class="col-md-8 mb-3">
         <h2 class="text-black font-w600 fs-32">DHA</h2>
+    </div>
+    <div class="col-md-4 text-right mb-3">
+        <div class="d-inline">
+			<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+			<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+		</div>
     </div>
 
     <div class="col-md-12">
