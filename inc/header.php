@@ -150,6 +150,15 @@ include("head.php");
 							<li><a href="addproject.php">Add Project</a></li>
 						</ul>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-app"></i>
+							<span class="nav-text">Data Collection</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="datacollection.php">All Data</a></li>
+							<li><a href="adddatacollection.php">Add Data</a></li>
+						</ul>
+                    </li>
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-pin"></i>
 							<span class="nav-text">Locations</span>
@@ -195,10 +204,15 @@ include("head.php");
 							<li><a href="adduser.php">Add User</a></li>
 						</ul>
                     </li>
+                    <li><a class="ai-icon" href="#" aria-expanded="false">
+							<i class="flaticon-381-ring"></i>
+							<span class="nav-text">Contact Us</span>
+						</a>
+                    </li>
                 </ul>
 				<div class="add-menu-sidebar">
 					<img src="images/calendar.png" alt="" class="mr-3">
-					<p class="	font-w500 mb-0">Create Workout Plan Now</p>
+					<p class="font-w500 mb-0">Invesrments<br>and<br>Consultant</p>
 				</div>
 				<div class="copyright">
 					<p><strong><?php echo $projectName; ?></strong> © 2022 All Rights Reserved</p>

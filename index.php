@@ -3,7 +3,7 @@ $curPpageTitle = "Dashboard";
 include("inc/header.php");
 ?>
 
-
+<!-- 
 <div class="row">
 					<div class="col-xl-6 col-xxl-12">
 						<div class="row">
@@ -321,6 +321,7 @@ include("inc/header.php");
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
+
 
 <?php include("inc/footer.php");?>

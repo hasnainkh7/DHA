@@ -55,3 +55,16 @@
 			}, 1000); 
 		});
 	</script>
+
+
+<!-- Form Steps -->
+<script src="./vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
+	
+		 <!-- Form validate init -->
+		 <script src="./js/plugins-init/jquery.validate-init.js"></script>
+	<script>
+		$(document).ready(function(){
+			// SmartWizard initialize
+			$('#smartwizard').smartWizard(); 
+		});
+	</script>

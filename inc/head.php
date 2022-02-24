@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set('Asia/Karachi');
+$currentDate = date('d/m/Y');
+
 $projectName = "Property Information Portal";
 ?>
 
@@ -17,4 +20,7 @@ $projectName = "Property Information Portal";
 	<link href="./vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Form step -->
+    <link href="./vendor/jquery-smartwizard/dist/css/smart_wizard.min.css" rel="stylesheet">
 </head>
