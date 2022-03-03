@@ -1,6 +1,14 @@
 <?php
 
+$host = "localhost";
+$userName = "root";
+$pass = "";
+$dbName = "dha";
 
-require("https://dha.vmediahosting.com/index.php");
-echo $pass;
+$conn = mysqli_connect($host,$userName,$pass,$dbName);
+
+if(!$conn){
+    echo "<script>alert('Error Establishing DataBase Connection');</script>";
+}
+
 ?>

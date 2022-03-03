@@ -1,6 +1,7 @@
 <?php
 $curPpageTitle = "Add Project > Add Sectors"; 
 include("inc/header.php");
+
 ?>
 
 <style>
@@ -47,45 +48,7 @@ input[type=checkbox]:checked ~ .title {
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-sm-2 col-6">
-                                                        <div class="card avtivity-card bg-light">
-                                                            <input type="checkbox" name="sector1" id="feature1"/>
-                                                            <div class="card-body">
-                                                                <div class="media align-items-center">
-                                                                    <div class="media-body text-center">
-                                                                        <span class="title text-black font-w600">A</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="effect bg-success"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2 col-6">
-                                                        <div class="card avtivity-card bg-light">
-                                                            <input type="checkbox" name="sector2" id="feature1"/>
-                                                            <div class="card-body">
-                                                                <div class="media align-items-center">
-                                                                    <div class="media-body text-center">
-                                                                        <span class="title text-black font-w600">B</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="effect bg-success"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2 col-6">
-                                                        <div class="card avtivity-card bg-light">
-                                                            <input type="checkbox" name="sector3" id="feature1"/>
-                                                            <div class="card-body">
-                                                                <div class="media align-items-center">
-                                                                    <div class="media-body text-center">
-                                                                        <span class="title text-black font-w600">C</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="effect bg-success"></div>
-                                                        </div>
-                                                    </div>
+                                                    <?php getSectorsForAddProject(); ?>
                                                 </div>
                                                 <div class="row mb-2">
                                                     <div class="col-md-12">

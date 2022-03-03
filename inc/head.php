@@ -1,4 +1,7 @@
 <?php
+include("connection.php");
+include("functions.php");
+
 date_default_timezone_set('Asia/Karachi');
 $currentDate = date('d/m/Y');
 
