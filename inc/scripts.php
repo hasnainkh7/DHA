@@ -6,6 +6,8 @@
 	<script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./js/plugins-init/datatables.init.js"></script>
 	<script src="./vendor/owl-carousel/owl.carousel.js"></script>
+	<script src="./vendor/select2/js/select2.full.min.js"></script>
+	<script src="./js/plugins-init/select2-init.js"></script>
 	
 	<!-- Chart piety plugin files -->
     <script src="./vendor/peity/jquery.peity.min.js"></script>

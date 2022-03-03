@@ -174,7 +174,7 @@ include("head.php");
 						</a>
                         <ul aria-expanded="false">
 							<li><a href="plottypes.php">All Plot Types</a></li>
-							<li><a href="addplottype.php">Add Plot</a></li>
+							<li><a href="addplottype.php">Add Plot Type</a></li>
 						</ul>
                     </li>
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

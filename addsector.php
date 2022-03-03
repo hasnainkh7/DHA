@@ -1,31 +1,31 @@
 <?php
-$curPpageTitle = "Add Project"; 
+$curPpageTitle = "Add Sector"; 
 include("inc/header.php");
 ?>
 
 <div class="card">
-                            <div class="card-header">Add New Project</h4>
+                            <div class="card-header">Add New Sector</h4>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="addProjectStepTwo.php" method="GET">
+                                    <form>
+
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <label>Project Name</label>
-                                                <input type="text" class="form-control" name="projectName" placeholder="Enter Project Name" required>
+                                                <label>Sector Name</label>
+                                                <input type="text" class="form-control" placeholder="Enter Sector Name">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <label>Location</label>
+                                                <label>Project</label>
                                                 <select id="single-select">
-                                                    <option>Islamabad</option>
-                                                    <option>Karachi</option>
-                                                    <option>Lahore</option>
+                                                    <option>DHA</option>
+                                                    <option>Askari</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Next Step</button>
+                                        <button type="submit" class="btn btn-primary">Add Sector</button>
                                     </form>
                                 </div>
                             </div>

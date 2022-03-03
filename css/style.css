@@ -1933,7 +1933,7 @@ pre {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #000000 !important;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #f0f1f5;
@@ -1949,13 +1949,13 @@ pre {
     color: transparent;
     text-shadow: 0 0 0 #495057; }
   .form-control:focus {
-    color: #495057;
+    color: var(--portalGreen);
     background-color: #fff;
-    border-color: #315cf0;
+    border-color: var(--portalGreen);
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(11, 42, 151, 0.25); }
   .form-control::placeholder {
-    color: #6c757d;
+    color: #495057;
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
     background-color: #e9ecef;
@@ -31155,3 +31155,8 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.hamburger .line{
+  /* margin-left: 0 !important; */
+}
