@@ -16,42 +16,7 @@ include("inc/header.php");
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Karachi</td>
-                                                <td>
-                                                    <div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lahore</td>
-                                                <td>
-                                                    <div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Islamabad</td>
-                                                <td>
-                                                    <div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gujhranwala</td>
-                                                <td>
-                                                    <div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-                                                </td>
-                                            </tr>
+                                            <?php getLocationsTable(); ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>

@@ -19,8 +19,7 @@ include("inc/header.php");
                                             <div class="form-group col-md-12">
                                                 <label>Location</label>
                                                 <select id="single-select">
-                                                    <option>Karachi</option>
-                                                    <option>Lahore</option>
+                                                    <?php getLocationsSelect();?>
                                                 </select>
                                             </div>
                                         </div>

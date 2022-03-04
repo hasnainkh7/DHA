@@ -10,6 +10,25 @@ function getLocationsSelect(){
     }
 }
 
+function getLocationsTable(){
+
+    include("connection.php");
+    $gLTQuery = "SELECT * FROM location";
+    $gLTData = mysqli_query($conn,$gLTQuery);
+    while($gLTResult = mysqli_fetch_assoc($gLTData)){
+        echo "
+        <tr>
+        <td>".$gLTResult['location_name']."</td>
+        <td>
+            <div class='d-flex'>
+                <a href='#' class='btn btn-primary shadow btn-xs sharp mr-1'><i class='fa fa-pencil'></i></a>
+                <a href='#' class='btn btn-danger shadow btn-xs sharp'><i class='fa fa-trash'></i></a>
+            </div>
+        </td>
+        </tr>";
+    }
+}
+
 function getSectorsForAddProject(){
 
     include("connection.php");
@@ -19,7 +38,7 @@ function getSectorsForAddProject(){
         echo "
         <div class='col-sm-2 col-6'>
             <div class='card avtivity-card bg-light'>
-                <input type='checkbox' name='sectorName_".$gSFAPResult['sector_id']."' id='sectorId_".$gSFAPResult['sector_id']."'/>
+                <input type='checkbox' name='sectorName_".$gSFAPResult['sector_name']."' id='sectorId_".$gSFAPResult['sector_id']."'/>
                 <div class='card-body'>
                     <div class='media align-items-center'>
                          <div class='media-body text-center'>
