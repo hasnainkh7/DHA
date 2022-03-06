@@ -12,7 +12,6 @@ include("inc/header.php");
         <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32">Islamabad</span></h2>
     </div>
 </div>
-
 <div class="card">
                             <div class="card-header">Add Denominations</h4>
                             </div>

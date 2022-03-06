@@ -61,9 +61,7 @@ include("inc/header.php");
 													<div class="form-group">
 														<label class="text-label">Select Project*</label>
 														<select class="form-control default-select" id="projectname">
-                                                            <option>DHA</option>
-                                                            <option>Askari</option>
-                                                            <option>Malir</option>
+                                                        <?php getProjectsSelect(); ?>
                                                         </select>
 													</div>
 												</div>
@@ -71,9 +69,7 @@ include("inc/header.php");
 													<div class="form-group">
 														<label class="text-label">Select Project Location*</label>
 														<select class="form-control default-select" id="projectname">
-                                                            <option>Karachi</option>
-                                                            <option>Islamabad</option>
-                                                            <option>Lahore</option>
+                                                            <?php getLocationsSelect(); ?>
                                                         </select>
 													</div>
 												</div>

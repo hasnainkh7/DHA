@@ -1,5 +1,7 @@
 <?php
 
+
+// fuctions for select 
 function getLocationsSelect(){
 
     include("connection.php");
@@ -10,22 +12,13 @@ function getLocationsSelect(){
     }
 }
 
-function getLocationsTable(){
+function getProjectsSelect(){
 
     include("connection.php");
-    $gLTQuery = "SELECT * FROM location";
-    $gLTData = mysqli_query($conn,$gLTQuery);
-    while($gLTResult = mysqli_fetch_assoc($gLTData)){
-        echo "
-        <tr>
-        <td>".$gLTResult['location_name']."</td>
-        <td>
-            <div class='d-flex'>
-                <a href='#' class='btn btn-primary shadow btn-xs sharp mr-1'><i class='fa fa-pencil'></i></a>
-                <a href='#' class='btn btn-danger shadow btn-xs sharp'><i class='fa fa-trash'></i></a>
-            </div>
-        </td>
-        </tr>";
+    $gPSQuery = "SELECT * FROM project";
+    $gPSData = mysqli_query($conn,$gPSQuery);
+    while($gPSResult = mysqli_fetch_assoc($gPSData)){
+        echo "<option value=".$gPSResult['project_id'].">".$gPSResult['project_name']."</option>";
     }
 }
 
@@ -50,6 +43,48 @@ function getSectorsForAddProject(){
             </div>
         </div>
         ";
+    }
+}
+
+
+
+// functions for Table 
+
+function getLocationsTable(){
+
+    include("connection.php");
+    $gLTQuery = "SELECT * FROM location";
+    $gLTData = mysqli_query($conn,$gLTQuery);
+    while($gLTResult = mysqli_fetch_assoc($gLTData)){
+        echo "
+        <tr>
+        <td>".$gLTResult['location_name']."</td>
+        <td>
+            <div class='d-flex'>
+                <a href='#' class='btn btn-primary shadow btn-xs sharp mr-1'><i class='fa fa-pencil'></i></a>
+                <a href='#' class='btn btn-danger shadow btn-xs sharp'><i class='fa fa-trash'></i></a>
+            </div>
+        </td>
+        </tr>";
+    }
+}
+
+function getSectorTable(){
+
+    include("connection.php");
+    $gSTQuery = "SELECT * FROM sector ORDER BY sector_id ASC";
+    $gSTData = mysqli_query($conn,$gSTQuery);
+    while($gSTResult = mysqli_fetch_assoc($gSTData)){
+        echo "
+        <tr>
+        <td>".$gSTResult['sector_name']."</td>
+        <td>
+            <div class='d-flex'>
+                <a href='#' class='btn btn-primary shadow btn-xs sharp mr-1'><i class='fa fa-pencil'></i></a>
+                <a href='#' class='btn btn-danger shadow btn-xs sharp'><i class='fa fa-trash'></i></a>
+            </div>
+        </td>
+        </tr>";
     }
 }
 
