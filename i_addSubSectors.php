@@ -4,6 +4,8 @@ include("inc/connection.php");
 
 $projectDataId = $_GET['projectDataId'];
 
+echo $projectDataId;
+
 $query = "SELECT * FROM project_sector WHERE projectData_id = $projectDataId";
 $done = mysqli_query($conn,$query);
  
@@ -12,19 +14,20 @@ while($result = mysqli_fetch_assoc($done)){
     $sectorDataID = $result['id'];
     $subSectorGetID = 'sub_SectorsOf'.$sectorDataID;
     
-    if($sectorGetData = $_GET[$subSectorGetID]){
+    $sectorGetData = $_GET[$subSectorGetID];
     
         foreach ($sectorGetData as $selectedOption){
     
-            echo $selectedOption."<br>";
+            echo "Selected OPTION: ".$selectedOption."<br>";
+            echo "SECTOR DATA ID: ".$sectorDataID."<br><br><br>";
 
-            $insertSubSectorQuery = "INSERT INTO `project_sub_sector`(`sub_sector_id`, `project_sector_id`) VALUES ('$selectedOption','$sectorDataID')";
+            $insertSubSectorQuery = "INSERT INTO `project_sub_sector`(`sub_sector_id`, `project_sector_id`, `projectData_id`) VALUES ('$selectedOption','$sectorDataID','$projectDataId')";
             $insertSubSectorDone = mysqli_query($conn,$insertSubSectorQuery);
+
     
         }
     
-    }
-    header("location:addProjectStepFive.php?projectd");
+    header('location:addProjectStepFive.php?projectDataId='.$projectDataId.'');
 
 }
 ?>

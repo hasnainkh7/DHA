@@ -54,7 +54,7 @@ input[type=checkbox]:checked ~ .title {
                                                 <div class="row mb-2">
                                                     <div class="col-md-12">
                                                         <div class="custom-control custom-checkbox mb-3 check-xs">
-                                                            <input type="hidden" name="projectDataId" value="<?php echo $projectDataId; ?>" required>
+                                                            <input type="text" name="projectDataId" value="<?php echo $projectDataId; ?>" required>
                                                             <input type="checkbox" class="custom-control-input" id="denomination1" required>
 											                <label class="custom-control-label" for="denomination1">Want to Add Sub Sectors?</label>
 										                </div>
