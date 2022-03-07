@@ -8,7 +8,7 @@ include("inc/header.php");
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="addProjectStepTwo.php" method="GET">
+                                    <form action="i_addProject.php" method="GET">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>Project Name</label>
@@ -18,7 +18,7 @@ include("inc/header.php");
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>Location</label>
-                                                <select id="single-select">
+                                                <select class="multi-select" name="locations[]" multiple="multiple" placeholder="Please Slect Cities">
                                                     <?php getLocationsSelect();?>
                                                 </select>
                                             </div>

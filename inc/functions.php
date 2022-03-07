@@ -1,5 +1,42 @@
 <?php
 
+function replaceProjectfromIdToName($projectId){
+    include("connection.php");
+    $gPNQuery = "SELECT * FROM projects WHERE project_id = $projectId";
+    $gPNData = mysqli_query($conn,$gPNQuery);
+    $gPNResult = mysqli_fetch_assoc($gPNData);
+
+    echo $gPNResult['project_name'];
+}
+
+function replaceSectorfromIdToName($sectorId){
+    include("connection.php");
+    $gSNQuery = "SELECT * FROM sector WHERE sector_id = $sectorId";
+    $gSNData = mysqli_query($conn,$gSNQuery);
+    $gSNResult = mysqli_fetch_assoc($gSNData);
+
+    return $gSNResult['sector_name'];
+}
+
+function replaceLocationfromIdToName($locationId){
+    include("connection.php");
+    $gLNQuery = "SELECT * FROM location WHERE location_id = $locationId";
+    $gLNData = mysqli_query($conn,$gLNQuery);
+    $gLNResult = mysqli_fetch_assoc($gLNData);
+
+    echo $gLNResult['location_name'];
+}
+
+function replaceLocationfromIdToNameSelect($locationId){
+    include("connection.php");
+    $gLSQuery = "SELECT * FROM location WHERE location_id = $locationId";
+    $gLSData = mysqli_query($conn,$gLSQuery);
+    while($gLSResult = mysqli_fetch_assoc($gLSData)){
+    echo "<option value=".$locationId.">".$gLSResult['location_name']."</option>";
+    }
+}
+
+
 
 // fuctions for select 
 function getLocationsSelect(){
@@ -15,13 +52,25 @@ function getLocationsSelect(){
 function getProjectsSelect(){
 
     include("connection.php");
-    $gPSQuery = "SELECT * FROM project";
+    $gPSQuery = "SELECT * FROM projects";
     $gPSData = mysqli_query($conn,$gPSQuery);
     while($gPSResult = mysqli_fetch_assoc($gPSData)){
         echo "<option value=".$gPSResult['project_id'].">".$gPSResult['project_name']."</option>";
     }
 }
 
+function getProjectsLocationsSelect($projectId){
+
+    include("connection.php");
+    $gLSQuery = "SELECT * FROM project_data WHERE project_id = $projectId";
+    $gLSData = mysqli_query($conn,$gLSQuery);
+    while($gLSResult = mysqli_fetch_assoc($gLSData)){
+        replaceLocationfromIdToNameSelect($gLSResult['location_id']);
+    }
+}
+
+
+// functions for add projects 
 function getSectorsForAddProject(){
 
     include("connection.php");
@@ -31,7 +80,7 @@ function getSectorsForAddProject(){
         echo "
         <div class='col-sm-2 col-6'>
             <div class='card avtivity-card bg-light'>
-                <input type='checkbox' name='sectorName_".$gSFAPResult['sector_name']."' id='sectorId_".$gSFAPResult['sector_id']."'/>
+                <input type='checkbox' name='sectors[]' value='".$gSFAPResult['sector_id']."' id='sectorId_".$gSFAPResult['sector_id']."'/>
                 <div class='card-body'>
                     <div class='media align-items-center'>
                          <div class='media-body text-center'>
@@ -43,6 +92,57 @@ function getSectorsForAddProject(){
             </div>
         </div>
         ";
+    }
+}
+
+function getSubSectorsForAddProject($sectorId){
+
+    include("connection.php");
+    $gSFAPQuery = "SELECT * FROM sub_sector";
+    $gSFAPData = mysqli_query($conn,$gSFAPQuery);
+    while($gSFAPResult = mysqli_fetch_assoc($gSFAPData)){
+        echo "
+        <div class='col-sm-1 col-6'>
+            <div class='card avtivity-card bg-light'>
+                <input type='checkbox' name='sub_SectorsOf".$sectorId."[]' value='".$gSFAPResult['sub_sector_id']."' id='sub_sectorId_".$gSFAPResult['sub_sector_id']."'/>
+                <div class='card-body'>
+                    <div class='media align-items-center'>
+                         <div class='media-body text-center'>
+                            <span class='title text-black font-w600'>".$gSFAPResult['sub_sector_name']."</span>
+                        </div>
+                    </div>
+                </div>
+                <div class='effect bg-success'></div>
+            </div>
+        </div>
+        ";
+    }
+}
+
+function getAddSubSectorsForAddProject($projectDataId){
+
+    include("connection.php");
+    $gSSFAPQuery = "SELECT * FROM project_sector WHERE projectData_id = $projectDataId";
+    $gSSFAPData = mysqli_query($conn,$gSSFAPQuery);
+    $i = 0;
+    while($gSSFAPResult = mysqli_fetch_assoc($gSSFAPData)){
+        echo "
+        <div class='accordion__item'>
+            <div class='accordion__header' data-toggle='collapse' data-target='#no-gutter_collapse".$i."'>
+                <span class='accordion__header--text title text-black fs-22'>Sector ".replaceSectorfromIdToName($gSSFAPResult['sector_id'])."</span>
+                <span class='accordion__header--indicator'></span>
+            </div>
+            <div id='no-gutter_collapse".$i."' class='collapse accordion__body' data-parent='#accordion-three'>
+                <div class='accordion__body--text'>
+                    <div class='row'>";
+
+                    getSubSectorsForAddProject($gSSFAPResult['id']);
+
+            echo    "</div></div>
+            </div>
+        </div>";
+        $i++;
+    
     }
 }
 
@@ -87,5 +187,7 @@ function getSectorTable(){
         </tr>";
     }
 }
+
+
 
 ?>
