@@ -56,7 +56,7 @@ while($result = mysqli_fetch_assoc($done)){
     
     
     
-    header('location:projects.php?projectDataId='.$projectDataId.'');
+    header('location:projects.php');
 
 }
 ?>

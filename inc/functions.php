@@ -9,6 +9,7 @@ function replaceProjectfromIdToName($projectId){
     echo $gPNResult['project_name'];
 }
 
+
 function replaceUnitfromIdToName($unitId){
     include("connection.php");
     $gSNQuery = "SELECT * FROM units WHERE id = $unitId";
@@ -51,7 +52,7 @@ function replaceLocationfromIdToName($locationId){
     $gLNData = mysqli_query($conn,$gLNQuery);
     $gLNResult = mysqli_fetch_assoc($gLNData);
 
-    echo $gLNResult['location_name'];
+    return $gLNResult['location_name'];
 }
 
 function replaceLocationfromIdToNameSelect($locationId){
@@ -394,6 +395,112 @@ function getSectorTable(){
 
 
 // projects data 
+
+
+function getProjectSubSectorsData($projectSectorDataId,$projectDataId){
+    include("connection.php");
+    $gProLQuery = "SELECT * FROM project_sub_sector WHERE project_sector_id = $projectSectorDataId";
+    $gProLData = mysqli_query($conn,$gProLQuery);
+
+    while($gProLResult = mysqli_fetch_assoc($gProLData)){
+        echo "
+        <div class='col-4 col-sm-2'>
+                <a href='subsectordata.php?projectData_id=".$projectDataId."&projectSubSectorId=".$gProLResult['id']."&SubSectorId=".$gProLResult['sub_sector_id']."'>
+                <div class='card avtivity-card'>
+                    <div class='card-body'>
+                        <div class='media align-items-center'>
+                            <div class='media-body text-center'>
+                                <span class='title text-black font-w600'>".replaceSubSectorfromIdToName($gProLResult['sub_sector_id'])."</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='effect bg-success'></div>
+                </div>
+                </a>
+            </div>";
+    }
+
+}
+
+function getProjectSectorsData($projectDataId){
+    include("connection.php");
+    $gProLQuery = "SELECT * FROM project_sector WHERE projectData_id = $projectDataId";
+    $gProLData = mysqli_query($conn,$gProLQuery);
+
+    while($gProLResult = mysqli_fetch_assoc($gProLData)){
+        echo "
+        <div class='col-4 col-sm-2'>
+                <a href='sectordata.php?projectData_id=".$projectDataId."&projectSectorId=".$gProLResult['id']."&SectorId=".$gProLResult['sector_id']."'>
+                <div class='card avtivity-card'>
+                    <div class='card-body'>
+                        <div class='media align-items-center'>
+                            <div class='media-body text-center'>
+                                <span class='title text-black font-w600'>".replaceSectorfromIdToName($gProLResult['sector_id'])."</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='effect bg-success'></div>
+                </div>
+                </a>
+            </div>";
+    }
+
+}
+
+function getProjectLocationsData($projectId){
+    include("connection.php");
+    $gProLQuery = "SELECT * FROM project_data WHERE project_id = $projectId";
+    $gProLData = mysqli_query($conn,$gProLQuery);
+
+    echo "
+    <div class='col-md-12'>
+        <div class='row'>"
+    ;
+
+    while($gProLResult = mysqli_fetch_assoc($gProLData)){
+        echo "
+        <div class='col-sm-3'>
+                <a href='projectdata.php?projectDataId=".$gProLResult['id']."'>
+                <div class='card avtivity-card'>
+                    <div class='card-body'>
+                        <div class='media align-items-center'>
+                            <div class='media-body text-center'>
+                                <span class='title text-black font-w600'>".replaceLocationfromIdToName($gProLResult['location_id'])."</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='effect bg-success'></div>
+                </div>
+                </a>
+            </div>";
+    }
+
+    echo "</div>
+    </div>";
+}
+
+function getProjectData(){
+    include("connection.php");
+    $gProQuery = "SELECT * FROM projects";
+    $gProData = mysqli_query($conn,$gProQuery);
+    while($gProResult = mysqli_fetch_assoc($gProData)){
+        echo "
+        <div class='row'>
+            <div class='col-md-8 mb-3'>
+                <h2 class='text-black font-w600 fs-32'>".$gProResult['project_name']."</h2>
+                <p><strong>Last Updated:</strong> 12 Feb 2022</p>
+            </div>
+            <div class='col-md-4 text-right mb-3'>
+                <div class='d-inline'>
+			        <a href='#' class='btn btn-primary shadow btn-xs sharp mr-1'><i class='fa fa-pencil'></i></a>
+			        <a href='#' class='btn btn-danger shadow btn-xs sharp'><i class='fa fa-trash'></i></a>
+		        </div>
+            </div>
+        ";
+            getProjectLocationsData($gProResult['project_id']);
+        echo "</div>";
+    }
+}
 
 
 ?>

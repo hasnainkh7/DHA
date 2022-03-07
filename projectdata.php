@@ -1,6 +1,12 @@
 <?php
 $curPpageTitle = "Project > DHA"; 
 include("inc/header.php");
+
+$projectDataId = $_GET['projectDataId'];
+$getProjectDataQuery = "SELECT * FROM `project_data` WHERE id = $projectDataId";
+$getProjectDataData = mysqli_query($conn,$getProjectDataQuery);
+$getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
+
 ?>
 
 
@@ -8,10 +14,10 @@ include("inc/header.php");
 <div class="row mt-4">
 
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32">DHA</span></h2>
+        <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32"><?php replaceProjectfromIdToName($getProjectDataResult['project_id']); ?></span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32">Islamabad</span></h2>
+        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32"><?php echo replaceLocationfromIdToName($getProjectDataResult['location_id']); ?></span></h2>
     </div>
     <div class="col-12 col-md-8 text-right mb-3">
         <p><strong>Last Updated:</strong><br> 12 Feb 2022</p>
@@ -25,95 +31,7 @@ include("inc/header.php");
             </div>
         </div>
         <div class="row">
-            <div class="col-4 col-sm-2">
-                <a href="sectordata.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">A</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sectordata.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">B</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sectordata.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">C</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sectordata.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">D</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sectordata.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">E</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sectordata.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">F</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
+            <?php getProjectSectorsData($projectDataId); ?>
         </div>
     </div>
 

@@ -1,16 +1,14 @@
-
-    
-
-                                                                                        
-                                                                                            <div class='col-md-3'>
-                                                                                                <div class='custom-control custom-checkbox mb-3 check-xs'>
-											                                                        <input type='checkbox' class='custom-control-input' id='denomination1' required>
-											                                                        <label class='custom-control-label' for='denomination1'>125 Sq. Yards</label>
-										                                                        </div>
-                                                                                            </div>
-                                                                                        
-                                                                                        
-                                                                                 
-
-
-                                                                           
+<div class='col-4 col-sm-2'>
+                <a href='sectordata.php'>
+                <div class='card avtivity-card'>
+                    <div class='card-body'>
+                        <div class='media align-items-center'>
+                            <div class='media-body text-center'>
+                                <span class='title text-black font-w600'>A</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='effect bg-success'></div>
+                </div>
+                </a>
+            </div>
