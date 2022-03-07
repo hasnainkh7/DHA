@@ -9,6 +9,15 @@ function replaceProjectfromIdToName($projectId){
     echo $gPNResult['project_name'];
 }
 
+function replaceUnitfromIdToName($unitId){
+    include("connection.php");
+    $gSNQuery = "SELECT * FROM units WHERE id = $unitId";
+    $gSNData = mysqli_query($conn,$gSNQuery);
+    $gSNResult = mysqli_fetch_assoc($gSNData);
+
+    return $gSNResult['unit_name'];
+}
+
 function replaceSectorfromIdToName($sectorId){
     include("connection.php");
     $gSNQuery = "SELECT * FROM sector WHERE sector_id = $sectorId";
@@ -33,7 +42,7 @@ function replaceSubSubSectorfromIdToName($subSubSectorId){
     $gSNData = mysqli_query($conn,$gSNQuery);
     $gSNResult = mysqli_fetch_assoc($gSNData);
 
-    echo $gSNResult['sub_sub_sector_name'];
+    return $gSNResult['sub_sub_sector_name'];
 }
 
 function replaceLocationfromIdToName($locationId){
@@ -189,35 +198,39 @@ function getAddSubSectorsForAddProject($projectDataId){
     }
 }
 
-function getSubSectorsForAddSubSubSectorsForAddProject($projectSector_Id){
+function getSubSectorsForAddSubSubSectorsForAddProject($projectSectorDataId){
     include("connection.php");
-    $gSSSFAPQuery = "SELECT * FROM project_sub_sector WHERE project_sector_id = $projectSector_Id";
+    $gSSSFAPQuery = "SELECT * FROM project_sub_sector WHERE project_sector_id = $projectSectorDataId";
     $gSSSFAPData = mysqli_query($conn,$gSSSFAPQuery);
-    $k = 0;
+    $l = rand(99,99999);
     while($gSSSFAPResult = mysqli_fetch_assoc($gSSSFAPData)){
         echo "
         <div class='accordion__item'>
-            <div class='accordion__header' data-toggle='collapse' data-target='#no-gutter_collapse".$k."'>
-                <span class='accordion__header--text title text-black fs-22'>Sub Sector ".replaceSectorfromIdToName($gSSSFAPResult['sub_sector_id'])."</span>
+            <div class='accordion__header' data-toggle='collapse' data-target='#no-gutter_collapse".$l."'>
+                <span class='accordion__header--text title text-black fs-22'>Sub Sector ".replaceSUBSectorfromIdToName($gSSSFAPResult['sub_sector_id'])."</span>
                 <span class='accordion__header--indicator'></span>
             </div>
-            <div id='no-gutter_collapse".$k."' class='collapse accordion__body' data-parent='#accordion-three'>
+            <div id='no-gutter_collapse".$l."' class='collapse accordion__body' data-parent='#accordion-three'>
                 <div class='accordion__body--text'>
-                    <div class='row'>";
+                    <div class='row'>
+                    ";
                     getSubSubSectorsForAddProject($gSSSFAPResult['id']);
+
             echo    "</div></div>
             </div>
         </div>";
-        $k++;
+        $l++;
     }
+
 }
+
 
 function getSectorsForAddSubSubSectorsForAddProject($projectDataId){
 
     include("connection.php");
     $gSSFAPQuery = "SELECT * FROM project_sector WHERE projectData_id = $projectDataId";
     $gSSFAPData = mysqli_query($conn,$gSSFAPQuery);
-    $i = 0;
+    $i = rand(99,99999);
     while($gSSFAPResult = mysqli_fetch_assoc($gSSFAPData)){
         echo "<div class='row mb-2'>
             <div class='col-md-12'>
@@ -225,11 +238,114 @@ function getSectorsForAddSubSubSectorsForAddProject($projectDataId){
             </div>
         </div>";
         echo "<div class='row mb-4'>
-        <div class='col-md-12'>";
+        <div class='col-md-12'>
+            <div id='accordion-three' class='accordion accordion-no-gutter accordion-header-bg'>
+        ";
             getSubSectorsForAddSubSubSectorsForAddProject($gSSFAPResult['id']);
-        echo "</div>
+        echo "</div></div>
             </div>";
         $i++;
+    }
+}
+
+function getDenominationsValuesForAddProject($denominationTypeId,$projectSubSubSectorDataId){
+    include("connection.php");
+    $gDVQuery = "SELECT * FROM plot_denomination WHERE plot_type = $denominationTypeId";
+    $gDVData = mysqli_query($conn,$gDVQuery);
+    $o = rand(99,999);
+    echo "<div class='row ml-2'>";
+    while($gDVResult = mysqli_fetch_assoc($gDVData)){
+        echo "
+        <div class='col-md-3'>
+            <div class='custom-control custom-checkbox mb-3 check-xs'>
+				<input type='checkbox' name='denominationValueOfSubSubSector".$projectSubSubSectorDataId."[]' value='".$gDVResult['plot_den_id']."' class='custom-control-input' id='denominationvalue".$o."'>
+				<label class='custom-control-label' for='denominationvalue".$o."' >".$gDVResult['plot_den']." ".replaceUnitfromIdToName($gDVResult['unit'])."</label>
+			</div>
+        </div>";
+
+        $o++;
+    }
+
+    echo "</div>";
+
+}
+
+function getDenominationsTypesForAddProject($projectSubSubSectorDataId){
+    include("connection.php");
+    $gPTQuery = "SELECT * FROM plot_type";
+    $gPTDone = mysqli_query($conn,$gPTQuery);
+
+    echo "
+    <div class='row ml-2'>
+        <div class='col-md-12'>
+            <div class='row'>";
+    while($gPTResult = mysqli_fetch_assoc($gPTDone)){
+        echo "
+        <div class='col-md-6'>
+            <h3 class='fs-16'>".$gPTResult['plot_type']."</h3>
+        ";
+            getDenominationsValuesForAddProject($gPTResult['id'],$projectSubSubSectorDataId);
+
+        echo "</div>";
+    }
+
+    echo "
+            </div>
+        </div>
+    </div>
+        ";
+}
+
+function getDenominationsSubSubSectorsForAddProject($projectSubSubSectorDataId){
+    include("connection.php");
+    $gSSFAPQuery = "SELECT * FROM project_sub_sub_sector WHERE project_sub_sector_id = $projectSubSubSectorDataId";
+    $gSSFAPData = mysqli_query($conn,$gSSFAPQuery);
+    while($gSSFAPResult = mysqli_fetch_assoc($gSSFAPData)){
+        echo "
+        <div class='row ml-2'>
+            <div class='col-md-12'>
+                <h3 class='fs-20'>Sub Sub Sector ".replaceSubSubSectorfromIdToName($gSSFAPResult['sub_sub_sector_id'])."</h3>
+        ";
+        getDenominationsTypesForAddProject($gSSFAPResult['id']);
+        echo "
+        </div> 
+        </div>";
+    }
+}
+
+function getDenominationsSubSectorsForAddProject($projectSectorDataId){
+    include("connection.php");
+    $gSSFAPQuery = "SELECT * FROM project_sub_sector WHERE project_sector_id = $projectSectorDataId";
+    $gSSFAPData = mysqli_query($conn,$gSSFAPQuery);
+    while($gSSFAPResult = mysqli_fetch_assoc($gSSFAPData)){
+        echo "
+        <div class='row ml-2'>
+            <div class='col-md-12 mb-2'>
+                <h3 class='fs-22 text-black'>Sub Sector ".replaceSubSectorfromIdToName($gSSFAPResult['sub_sector_id'])."</h3>
+        ";
+
+            getDenominationsSubSubSectorsForAddProject($gSSFAPResult['id']);
+        echo "
+        </div>
+        </div>
+        ";
+    }
+}
+
+function getDenominationsSectorsForAddProject($projectDataId){
+    include("connection.php");
+    $gSSFAPQuery = "SELECT * FROM project_sector WHERE projectData_id = $projectDataId";
+    $gSSFAPData = mysqli_query($conn,$gSSFAPQuery);
+    while($gSSFAPResult = mysqli_fetch_assoc($gSSFAPData)){
+        echo "
+        <div class='row mb-4'>
+            <div class='col-md-12'>
+                <h3 class='text-green fs-28'>Sector ".replaceSectorfromIdToName($gSSFAPResult['sector_id'])."</h3>
+        ";
+            getDenominationsSubSectorsForAddProject($gSSFAPResult['id']);
+        echo "
+        </div>
+        </div>";
     }
 }
 
@@ -275,6 +391,9 @@ function getSectorTable(){
     }
 }
 
+
+
+// projects data 
 
 
 ?>
