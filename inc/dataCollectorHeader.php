@@ -1,8 +1,8 @@
 <?php
 include("head.php");
 
-if($_SESSION["userData"]['role'] == 2){
-    header("location:indexDataCollector.php");
+if($_SESSION["userData"]['role'] == 1){
+    header("location:index.php");
 }
 ?>
 
@@ -140,74 +140,11 @@ if($_SESSION["userData"]['role'] == 2){
         <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-					<li><a href="index.php" class="ai-icon" aria-expanded="false">
+					<li><a href="indexDataCollector.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-app"></i>
-							<span class="nav-text">Projects</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="projects.php">All Projects</a></li>
-							<li><a href="addproject.php">Add Project</a></li>
-						</ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-app"></i>
-							<span class="nav-text">Data Collection</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="datacollection.php">All Data</a></li>
-							<li><a href="adddatacollection.php">Add Data</a></li>
-						</ul>
-                    </li>
-					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-pin"></i>
-							<span class="nav-text">Locations</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="locations.php">All Locations</a></li>
-							<li><a href="addlocation.php">Add Location</a></li>
-						</ul>
-                    </li>
-					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-panel"></i>
-							<span class="nav-text">Plot Types</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="plottypes.php">All Plot Types</a></li>
-							<li><a href="addplottype.php">Add Plot Type</a></li>
-						</ul>
-                    </li>
-					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-home"></i>
-							<span class="nav-text">Sectors</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="sectors.php">All Sectors</a></li>
-							<li><a href="addsector.php">Add Sector</a></li>
-						</ul>
-                    </li>
-					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-route"></i>
-							<span class="nav-text">Denominations</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="denominations.php">All Denominations</a></li>
-							<li><a href="addDenomination.php">Add Denomination</a></li>
-						</ul>
-                    </li>
-					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-user-8"></i>
-							<span class="nav-text">Users</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="users.php">All Users</a></li>
-							<li><a href="adduser.php">Add User</a></li>
-						</ul>
-                    </li>
                     <li><a class="ai-icon" href="#" aria-expanded="false">
 							<i class="flaticon-381-ring"></i>
 							<span class="nav-text">Contact Us</span>

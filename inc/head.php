@@ -1,11 +1,17 @@
 <?php
+
+session_start();
 include("connection.php");
 include("functions.php");
 
+
 date_default_timezone_set('Asia/Karachi');
 $currentDate = date('d/m/Y');
-
 $projectName = "Property Information Portal";
+
+if($_SESSION["userData"]['isLogin'] != 1){
+    header("location:login.php");
+}
 ?>
 
 <!DOCTYPE html>

@@ -1,11 +1,13 @@
 <?php
-$curPpageTitle = "Project > DHA"; 
+$curPpageTitle = "Project Data"; 
 include("inc/header.php");
 
 $projectDataId = $_GET['projectDataId'];
 $getProjectDataQuery = "SELECT * FROM `project_data` WHERE id = $projectDataId";
 $getProjectDataData = mysqli_query($conn,$getProjectDataQuery);
 $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
+$curPpageTitle = "Project > "; 
+
 
 ?>
 

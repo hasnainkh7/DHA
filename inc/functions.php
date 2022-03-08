@@ -396,8 +396,32 @@ function getSectorTable(){
 
 // projects data 
 
+function getProjectSubSubSectorsData($projectDataId,$sectorId,$projectSubSectorDataId,$subSectorId){
+    include("connection.php");
+    $gProLQuery = "SELECT * FROM project_sub_sub_sector WHERE project_sub_sector_id = $projectSubSectorDataId";
+    $gProLData = mysqli_query($conn,$gProLQuery);
 
-function getProjectSubSectorsData($projectSectorDataId,$projectDataId){
+    while($gProLResult = mysqli_fetch_assoc($gProLData)){
+        echo "
+        <div class='col-4 col-sm-2'>
+                <a href='sssector.php?projectData_id=".$projectDataId."&SectorId=".$sectorId."&projectSubSectorId=".$projectSubSectorDataId."&SubSectorId=".$subSectorId."&subSubSectorId=".$gProLResult['sub_sub_sector_id']."'>
+                <div class='card avtivity-card'>
+                    <div class='card-body'>
+                        <div class='media align-items-center'>
+                            <div class='media-body text-center'>
+                                <span class='title text-black font-w600'>".replaceSubSubSectorfromIdToName($gProLResult['sub_sub_sector_id'])."</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='effect bg-success'></div>
+                </div>
+                </a>
+            </div>";
+    }
+
+}
+
+function getProjectSubSectorsData($projectSectorDataId,$projectDataId,$sectorId){
     include("connection.php");
     $gProLQuery = "SELECT * FROM project_sub_sector WHERE project_sector_id = $projectSectorDataId";
     $gProLData = mysqli_query($conn,$gProLQuery);
@@ -405,7 +429,7 @@ function getProjectSubSectorsData($projectSectorDataId,$projectDataId){
     while($gProLResult = mysqli_fetch_assoc($gProLData)){
         echo "
         <div class='col-4 col-sm-2'>
-                <a href='subsectordata.php?projectData_id=".$projectDataId."&projectSubSectorId=".$gProLResult['id']."&SubSectorId=".$gProLResult['sub_sector_id']."'>
+                <a href='subsectordata.php?projectData_id=".$projectDataId."&SectorId=".$sectorId."&projectSubSectorId=".$gProLResult['id']."&SubSectorId=".$gProLResult['sub_sector_id']."'>
                 <div class='card avtivity-card'>
                     <div class='card-body'>
                         <div class='media align-items-center'>

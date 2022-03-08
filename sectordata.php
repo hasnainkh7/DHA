@@ -1,5 +1,5 @@
 <?php
-$curPpageTitle = "Project > DHA > A"; 
+$curPpageTitle = "Project Data > Sector Data"; 
 include("inc/header.php");
 
 
@@ -37,7 +37,7 @@ $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
             </div>
         </div>
         <div class="row">
-            <?php getProjectSubSectorsData($projectSectorId,$projectDataId);?>
+            <?php getProjectSubSectorsData($projectSectorId,$projectDataId,$SectorId);?>
         </div>
     </div>
 

@@ -1,7 +1,15 @@
 <?php
-$curPpageTitle = "Project > DHA > A > AB"; 
+$curPpageTitle = "Project Data > Sector Data > Sub Sector Data"; 
 include("inc/header.php");
 
+$projectDataId = $_GET['projectData_id'];
+$SectorId = $_GET['SectorId'];
+$projectSubSectorId = $_GET['projectSubSectorId'];
+$SubSectorId = $_GET['SubSectorId'];
+
+$getProjectDataQuery = "SELECT * FROM `project_data` WHERE id = $projectDataId";
+$getProjectDataData = mysqli_query($conn,$getProjectDataQuery);
+$getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
 
 ?>
 
@@ -10,16 +18,16 @@ include("inc/header.php");
 <div class="row mt-4">
 
     <div class="col-6 col-md-2 mb-4">
-        <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32">DHA</span></h2>
+        <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32"><?php replaceProjectfromIdToName($getProjectDataResult['project_id']); ?></span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32">Islamabad</span></h2>
+        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32"><?php echo replaceLocationfromIdToName($getProjectDataResult['location_id']); ?></span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Sector:<br><span class="text-black font-w600 fs-32">A</span></h2>
+        <h2 class="font-w600 fs-18">Sector:<br><span class="text-black font-w600 fs-32"><?php echo replaceSectorfromIdToName($SectorId); ?></span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Sub Sector:<br><span class="text-black font-w600 fs-32">AB</span></h2>
+        <h2 class="font-w600 fs-18">Sub Sector:<br><span class="text-black font-w600 fs-32"><?php echo replaceSubSectorfromIdToName($SubSectorId); ?></span></h2>
     </div>
     <div class="col-6 col-md-4 text-right mb-3">
         <p><strong>Last Updated:</strong><br> 12 Feb 2022</p>
@@ -33,95 +41,7 @@ include("inc/header.php");
             </div>
         </div>
         <div class="row">
-            <div class="col-4 col-sm-2">
-                <a href="sssector.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">ABA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sssector.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">ABB</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sssector.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">ABC</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sssector.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">ABD</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sssector.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">ABD</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-4 col-sm-2">
-                <a href="sssector.php">
-                <div class="card avtivity-card">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="media-body text-center">
-                                <span class="title text-black font-w600">ABF</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect bg-success"></div>
-                </div>
-                </a>
-            </div>
+            <?php getProjectSubSubSectorsData($projectDataId,$SectorId,$projectSubSectorId,$SubSectorId);  ?>
         </div>
     </div>
 
