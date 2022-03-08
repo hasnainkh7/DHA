@@ -29,7 +29,7 @@ $curPpageTitle = "Project > ";
 
         <div class="row mb-2">
             <div class="col-md-12">
-                <h2 class="text-primary font-w600 fs-28 ">Sectors</h2>
+                <h2 class="text-primary font-w600 fs-28 ">Sectors / Phases</h2>
             </div>
         </div>
         <div class="row">

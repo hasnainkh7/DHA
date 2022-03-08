@@ -9,6 +9,16 @@ function replaceProjectfromIdToName($projectId){
     echo $gPNResult['project_name'];
 }
 
+function replaceRolefromIdToName($roleId){
+    include("connection.php");
+    if($roleId == 1){
+        echo "Admin";
+    }elseif ($roleId == 2) {
+        echo "Data Provider";
+    }
+
+}
+
 
 function replaceUnitfromIdToName($unitId){
     include("connection.php");
