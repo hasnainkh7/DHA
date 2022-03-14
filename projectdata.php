@@ -11,7 +11,17 @@ $curPpageTitle = "Project > ";
 
 ?>
 
-
+<style>
+.denoTableHr{
+    border-right:1px solid #c7c7c7;
+    border-left:1px solid #c7c7c7;
+}
+.denoTableH th{
+    border-right:1px solid #c7c7c7;
+    border-left:1px solid #c7c7c7;
+}
+    
+</style>
 
 <div class="row mt-4">
 
@@ -160,7 +170,6 @@ $curPpageTitle = "Project > ";
         <div class="row mb-2">
             <div class="col-md-12">
                 <h2 class="text-primary font-w600 fs-28 ">Residential</h2>
-                <p>This data is based on One Week Average Performance</p>
             </div>
         </div>
 
@@ -170,8 +179,8 @@ $curPpageTitle = "Project > ";
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table text-center">
-                                <thead>
+                            <table class="table text-center denoTable">
+                                <thead class="denoTableH">
                                     <tr class="text-black">
                                         <th>125 Sq. Yards</th>
                                         <th>200 Sq. Yards</th>
@@ -183,7 +192,23 @@ $curPpageTitle = "Project > ";
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
+                                        <td class="denoTableHr">
+                                            <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-primary">Min</th>
+                                                            <th class="text-primary">Max</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-primary">Rs. 100</td>
+                                                            <td class="text-primary">Rs. 400</td>
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </td>
+                                        <td class="denoTableHr">
                                             <table class="table">
                                                     <thead>
                                                         <tr>
@@ -199,7 +224,7 @@ $curPpageTitle = "Project > ";
                                                     </tbody>
                                             </table>
                                         </td>
-                                        <td>
+                                        <td class="denoTableHr">
                                             <table class="table">
                                                     <thead>
                                                         <tr>
@@ -215,7 +240,7 @@ $curPpageTitle = "Project > ";
                                                     </tbody>
                                             </table>
                                         </td>
-                                        <td>
+                                        <td class="denoTableHr">
                                             <table class="table">
                                                     <thead>
                                                         <tr>
@@ -231,7 +256,7 @@ $curPpageTitle = "Project > ";
                                                     </tbody>
                                             </table>
                                         </td>
-                                        <td>
+                                        <td class="denoTableHr">
                                             <table class="table">
                                                     <thead>
                                                         <tr>
@@ -247,7 +272,7 @@ $curPpageTitle = "Project > ";
                                                     </tbody>
                                             </table>
                                         </td>
-                                        <td>
+                                        <td class="denoTableHr">
                                             <table class="table">
                                                     <thead>
                                                         <tr>
@@ -263,23 +288,6 @@ $curPpageTitle = "Project > ";
                                                     </tbody>
                                             </table>
                                         </td>
-                                        <td>
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-
                                     </tr>
                                 </tbody>
                             </table>

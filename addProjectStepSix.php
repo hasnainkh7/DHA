@@ -7,7 +7,10 @@ $projectDataId = $_GET['projectDataId'];
 
 
 <div class="row">
-<div class="col-6 col-md-2 mb-3">
+    <div class="col-6 col-md-2 mb-3">
+        <h2 class="font-w600 fs-18">Add Project:<br><span class=" text-black font-w600 fs-32">Step <span class="text-primary">06.</span></span></h2>
+    </div>
+    <div class="col-6 col-md-2 mb-3">
         <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32">DHA</span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">

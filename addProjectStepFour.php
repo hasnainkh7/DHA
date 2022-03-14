@@ -30,12 +30,16 @@ input[type=checkbox]:checked ~ .title {
 }
 </style>
 
+
 <div class="row">
-<div class="col-6 col-md-2 mb-3">
+    <div class="col-6 col-md-2 mb-3">
+        <h2 class="font-w600 fs-18">Add Project:<br><span class=" text-black font-w600 fs-32">Step <span class="text-primary">04.</span></span></h2>
+    </div>
+    <div class="col-6 col-md-2 mb-3">
         <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32"><?php replaceProjectfromIdToName($getProjectDataResult['project_id']); ?></span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32"><?php replaceLocationfromIdToName($getProjectDataResult['location_id']); ?></span></h2>
+        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32"><?php echo replaceLocationfromIdToName($getProjectDataResult['location_id']); ?></span></h2>
     </div>
 </div>
 
@@ -47,19 +51,11 @@ input[type=checkbox]:checked ~ .title {
                                     <form action="i_addSubSectors.php" method="GET">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
+                                                <input type="hidden" value="<?php echo $projectDataId;?>" name="projectDataId">
                                                 <div id="accordion-three" class="accordion accordion-no-gutter accordion-header-bg">
                                                     <?php getAddSubSectorsForAddProject($projectDataId); ?>
                                                 </div>
                                             </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-md-12">
-                                                        <div class="custom-control custom-checkbox mb-3 check-xs">
-                                                            <input type="text" name="projectDataId" value="<?php echo $projectDataId; ?>" required>
-                                                            <input type="checkbox" class="custom-control-input" id="denomination1" required>
-											                <label class="custom-control-label" for="denomination1">Want to Add Sub Sub Sectors?</label>
-										                </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Next Step</button>

@@ -26,14 +26,26 @@ while($result = mysqli_fetch_assoc($done)){
                 echo "Selected OPTION: ".$selectedOption."<br>";
                 echo "Sub SECTOR DATA ID: ".$subSectorProjectDataId."<br>";
 
-                echo "************<br><br>";
-    
-                $insertSubSubSectorQuery = "INSERT INTO `project_sub_sub_sector`(`sub_sub_sector_id`, `project_sub_sector_id`) VALUES ('$selectedOption','$subSectorProjectDataId')";
-                $insertSubSubSectorDone = mysqli_query($conn,$insertSubSubSectorQuery);
+                
 
-                if($insertSubSubSectorDone){
-                    echo 'data unserted';
+                if($selectedOption == 2){
+                    $updateSubSectorQuery = "UPDATE `project_sub_sector` SET `has_sub_sub_sector`='0' WHERE `id`='$subSectorProjectDataId'";
+                    $updateSubSectorDone = mysqli_query($conn,$updateSubSectorQuery);
+
+                    if($updateSubSectorDone){
+                            echo 'Sub Sector Updated';
+                    }
+
+                }else{
+                    $insertSubSubSectorQuery = "INSERT INTO `project_sub_sub_sector`(`sub_sub_sector_id`, `project_sub_sector_id`) VALUES ('$selectedOption','$subSectorProjectDataId')";
+                    $insertSubSubSectorDone = mysqli_query($conn,$insertSubSubSectorQuery);
+                    
+                    if($insertSubSubSectorDone){
+                            echo 'data inserted';
+                    }
                 }
+                echo "<br>************<br><br>";
+                
     
         
             }

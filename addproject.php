@@ -3,6 +3,12 @@ $curPpageTitle = "Add Project";
 include("inc/header.php");
 ?>
 
+<div class="row">
+    <div class="col-6 col-md-2 mb-3">
+        <h2 class="font-w600 fs-18">Add Project:<br><span class=" text-black font-w600 fs-32">Step <span class="text-primary">01.</span></span></h2>
+    </div>
+</div>
+
 <div class="card">
                             <div class="card-header">Add New Project</h4>
                             </div>

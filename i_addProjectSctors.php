@@ -19,7 +19,7 @@ foreach ($projectSectors as $selectedOption){
     echo "<br>";
     
     
-    $projectSectorDataInsertQuery = "INSERT INTO `project_sector`(`sector_id`, `projectData_id`) VALUES ('$selectedOption','$ProjectDataId')";
+    $projectSectorDataInsertQuery = "INSERT INTO `project_sector`(`sector_id`, `projectData_id`, `has_sub_sector`) VALUES ('$selectedOption','$ProjectDataId','1')";
     $projectSectorDataInserted = mysqli_query($conn,$projectSectorDataInsertQuery);
     if($projectSectorDataInserted){
         echo "indersted";

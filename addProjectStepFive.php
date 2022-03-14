@@ -31,11 +31,14 @@ input[type=checkbox]:checked ~ .title {
 </style>
 
 <div class="row">
-<div class="col-6 col-md-2 mb-3">
+    <div class="col-6 col-md-2 mb-3">
+        <h2 class="font-w600 fs-18">Add Project:<br><span class=" text-black font-w600 fs-32">Step <span class="text-primary">05.</span></span></h2>
+    </div>
+    <div class="col-6 col-md-2 mb-3">
         <h2 class="font-w600 fs-18">Project Name:<br><span class=" text-black font-w600 fs-32"><?php replaceProjectfromIdToName($getProjectDataResult['project_id']); ?></span></h2>
     </div>
     <div class="col-6 col-md-2 mb-3">
-        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32"><?php replaceLocationfromIdToName($getProjectDataResult['location_id']); ?></span></h2>
+        <h2 class="font-w600 fs-18">Location:<br><span class="text-black font-w600 fs-32"><?php echo replaceLocationfromIdToName($getProjectDataResult['location_id']); ?></span></h2>
     </div>
 </div>
 
