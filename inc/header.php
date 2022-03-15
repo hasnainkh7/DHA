@@ -161,7 +161,7 @@ if($_SESSION["userData"]['role'] == 2){
 						</a>
                         <ul aria-expanded="false">
 							<li><a href="datacollection.php">All Data</a></li>
-							<li><a href="adddatacollection.php">Add Data</a></li>
+							<li><a href="addprojectData.php">Add Data</a></li>
 						</ul>
                     </li>
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

@@ -11,18 +11,6 @@ $getProjectDataData = mysqli_query($conn,$getProjectDataQuery);
 $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
 
 ?>
-<style>
-.denoTableHr{
-    border:1px solid #c7c7c7;
-   
-}
-.denoTableH th{
-    border:1px solid #c7c7c7;
-   
-}
-    
-</style>
-
 
 <div class="row mt-4">
 
@@ -169,38 +157,6 @@ $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
 </div>
 </div>
 
-<div class="row">
-    <div class="col-md-12 mt-4">
-        <div class="row mb-2">
-            <div class="col-md-12">
-                <h2 class="text-primary font-w600 fs-28 ">Residential</h2>
-            </div>
-        </div>
-		<div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table text-center denoTable">
-                                <thead class="denoTableH">
-                                    <tr class="text-black">
-										<?php getProjectSectorDenomonationResTable($projectSectorId);?>
-                                    </tr>
-                                </thead>
-                                <tbody>
-									<!--  -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /# card -->
-            </div>
-        </div>
-		
-
-    </div>
-</div>
-
+<?php getPlotTypeDenomonationResTable($projectSectorId);?>
 
 <?php include("inc/footer.php");?>

@@ -19,6 +19,16 @@ function replaceProjectfromDataIdToName($projectDataId){
 
 }
 
+function replacePlotStatusfromDataIdToName($plotStatusId){
+    include("connection.php");
+
+    $gPSQuery = "SELECT * FROM `status` WHERE status_id = $plotStatusId";
+    $gPSData = mysqli_query($conn,$gPSQuery);
+    $gPSResult = mysqli_fetch_assoc($gPSData);
+    return $gPSResult['status'];
+
+}
+
 function replaceDenominationfromIdToName($plotDenoId){
 
     include("connection.php");
@@ -325,6 +335,7 @@ function getDenominationsValuesForAddProject($denominationTypeId,$projectSubSubS
                 <input type='checkbox' name='denominationValueOfSubSubSector".$projectSubSubSectorDataId."[]' value='".$gDVResult['plot_den_id']."' class='custom-control-input' id='denominationvalue".$o.$denominationTypeId.$l."'>
 				<label class='custom-control-label' for='denominationvalue".$o.$denominationTypeId.$l."' >".$gDVResult['plot_den']." ".replaceUnitfromIdToName($gDVResult['unit'])."</label>
 			</div>";
+           
             getDenominationStatusToggle($projectSubSubSectorDataId);
         echo "
         </div>";
@@ -408,7 +419,7 @@ function getDenominationsSectorsForAddProject($projectDataId){
             <div class='col-md-12'>
                 <h3 class='text-green fs-28'>Sector ".replaceSectorfromIdToName($gSSFAPResult['sector_id'])."</h3>
         ";
-            getDenominationsTypesForAddProject($gSSFAPResult['id']);
+            // getDenominationsTypesForAddProject($gSSFAPResult['id']);
             getDenominationsSubSectorsForAddProject($gSSFAPResult['id']);
         echo "
         </div>
@@ -606,17 +617,124 @@ function getProjectData(){
     }
 }
 
-function getProjectSectorDenomonationResTable($dataOf){
-
+function getPlotTypeDenomonationByTypeTable($dataOf,$plotTypeID){
     include("connection.php");
-    $gProSectorDenominationTableQuery = "SELECT * FROM project_denominations WHERE data_of = $dataOf";
-    $gProSectorDenominationTableData = mysqli_query($conn,$gProSectorDenominationTableQuery);
-    while($gProSectorDenominationTableResult = mysqli_fetch_assoc($gProSectorDenominationTableData)){
+    $gPTDQuery = "SELECT * FROM plot_denomination WHERE plot_type = $plotTypeID";
+    $gPTDDone = mysqli_query($conn,$gPTDQuery);
+
+    while($gPTDResult = mysqli_fetch_assoc($gPTDDone)){
+        echo "<h3>".$gPTDResult['plot_den_id']."</h3>";
+    }
+
+}
+
+function getPlotTypeDenomonationResTable($dataOf){
+    include("connection.php");
+    $gPTQuery = "SELECT * FROM plot_type";
+    $gPTDone = mysqli_query($conn,$gPTQuery);
+
+    while($gPTResult = mysqli_fetch_assoc($gPTDone)){
         echo "
-        <th>".replaceDenominationfromIdToName($gProSectorDenominationTableResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gProSectorDenominationTableResult['denomination_id'])."</th>
-        ";
+        <div class='row'>
+    <div class='col-md-12 mt-4'>
+        <div class='row mb-2'>
+            <div class='col-md-12'>
+                <h2 class='text-primary font-w600 fs-28 '>".$gPTResult['plot_type']."</h2>
+            </div>
+        </div>
+		<div class='row'>
+            <div class='col-lg-12'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <div class='table-responsive'>
+                            <table class='table text-center denoTable'>
+                                <thead class='denoTableH'>
+                                    <tr class='text-black'>";
+
+                                    getProjectSectorDenomonationTable($dataOf,$gPTResult['id']);
+
+        echo "</tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+        </div>
+    </div>
+</div>";
     }
 }
+
+function getProjectSectorDenomonationTable($dataOf,$plotTypeID){
+
+    include("connection.php");
+
+    $getDenoQuery = "SELECT * FROM `plot_denomination` WHERE plot_type = $plotTypeID";
+    $getDenoDone = mysqli_query($conn,$getDenoQuery);
+
+    $denoIdByType[] = "";
+
+    $l = 0;
+    while($getDenoResult = mysqli_fetch_assoc($getDenoDone)){
+        $denoIdByType[$l] = $getDenoResult['plot_den_id'];
+        $l++;
+    }
+
+    $e = 1;
+    $orQuery = "denomination_id = 0";
+    while($e <= count($denoIdByType)-1){
+        $orQuery = $orQuery." OR denomination_id = ".$denoIdByType[$e];
+        $e++;
+    }
+
+
+    $gProSectorDenominationTableQuery = "SELECT * FROM project_denominations WHERE data_of = $dataOf AND $orQuery";
+    $gProSectorDenominationTableData = mysqli_query($conn,$gProSectorDenominationTableQuery);
+    $DenoIdArray[] = "";
+    $j = 0;
+
+    if(mysqli_num_rows($gProSectorDenominationTableData)!=0){
+        while($gProSectorDenominationTableResult = mysqli_fetch_assoc($gProSectorDenominationTableData)){
+            echo "
+            <th>".replaceDenominationfromIdToName($gProSectorDenominationTableResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gProSectorDenominationTableResult['denomination_id'])." <span class='badge light badge-success'>".replacePlotStatusfromDataIdToName($gProSectorDenominationTableResult['plot_status'])."</span</th>
+            ";
+            $DenoIdArray[$j] = $gProSectorDenominationTableResult['id'];
+            $j++;
+        }
+        
+        $i = 0;
+        echo "<tr>";
+        while($i<count($DenoIdArray)){
+    
+            $donoId = $DenoIdArray[$i];
+            $gDenoPriceQuery = "SELECT * FROM `project_pricings` WHERE `project_deno_id` = $donoId";
+            $gDenoPriceDone = mysqli_query($conn,$gDenoPriceQuery);
+    
+            while($gDenoPriceResult = mysqli_fetch_assoc($gDenoPriceDone)){
+                echo "<td>
+                <table class='table text-center'>
+                    <tr>
+                        <th>Min</th>
+                        <th>Max</th>
+                    </tr>
+                    <tr>
+                        <th>".$gDenoPriceResult['min']." Lakh</th>
+                        <th>".$gDenoPriceResult['max']." Lakh</th>
+                    </tr>
+                </table>
+        
+                </td>";
+            }
+            $i++;
+        }
+        echo "</tr>";
+    }
+    
+    
+}
+
 
 function getProjectLocationsForAddProjectData($projectId){
     include("connection.php");
@@ -627,15 +745,75 @@ function getProjectLocationsForAddProjectData($projectId){
     }
 }
 
+function getDenominationsForAddProjectData($dataOf,$plotDenID){
+
+    include("connection.php");
+    $gDBTQuery = "SELECT * FROM `project_denominations` WHERE `data_of` = $dataOf AND `denomination_id` = '$plotDenID'";
+    $gDDone = mysqli_query($conn,$gDBTQuery);
+
+    if(mysqli_num_rows($gDDone) != 0 ){
+        while($gDResult = mysqli_fetch_assoc($gDDone)){
+            echo "
+            <style>
+            #myNoDataCol".$plotDenID.$dataOf."{
+                background-color:red;
+                display:none;
+            }
+            </style>
+            <div class='row ml-2 mb-3'>
+            <div class='col-md-3'>
+                <h3 class='fs-18'>".replaceDenominationfromIdToName($gDResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gDResult['denomination_id'])."<h3>
+            </div>
+            <div class='col-md-4'>
+                <input type='number' name='minDenoOf".$dataOf.$gDResult['denomination_id']."' class='form-control' placeholder='Min' required>
+            </div>
+            <div class='col-md-4'>
+                <input type='number' name='maxDenoOf".$dataOf.$gDResult['denomination_id']."' class='form-control' placeholder='Max' required>
+            </div>
+        </div>";
+        }
+    }
+    
+    
+}
+
+function getPlotTypeForAddProjectData($dataOf){
+    include("connection.php");
+    $gPTQuery = "SELECT * FROM plot_type";
+    $gPTDone = mysqli_query($conn,$gPTQuery);
+    echo "
+    <div class='row mb-2'>";
+    while($gPTResult = mysqli_fetch_assoc($gPTDone)){
+        echo "<div class='col-md-6'>
+            <h4 class='text-primary'>".$gPTResult['plot_type']."</h4>";
+        $plotId = $gPTResult['id'];
+
+        $gPTDQuery = "SELECT * FROM plot_denomination WHERE plot_type = $plotId";
+        $gPTDDone = mysqli_query($conn,$gPTDQuery);
+
+        while($gPTDResut = mysqli_fetch_assoc($gPTDDone)){
+            $plotDenID = $gPTDResut['plot_den_id'];
+            getDenominationsForAddProjectData($dataOf,$plotDenID);
+        }
+
+        echo "</div>";
+
+    }
+    echo "</div>
+    ";
+    
+}
+
 function getProjectSubSubSectorForAddProjectData($projectSubSubSectorDataId){
     include("connection.php");
     $gPSSQuery = "SELECT * FROM project_sub_sub_sector WHERE project_sub_sector_id = $projectSubSubSectorDataId";
     $gPSSDone = mysqli_query($conn,$gPSSQuery);
     while($gPSSResult = mysqli_fetch_assoc($gPSSDone)){
         echo "
-        <div class='row ml-2'>
+        <div class='row ml-4'>
              <div class='col-lg-12'>
-                 <h3 class='text-title fw-900 fs-22'>Sub Sub Sector: ".replaceSubSectorfromIdToName($gPSSResult['sub_sub_sector_id'])."</h3>";
+                 <h3 class='text-title text-black fw-900 fs-22'>Sub Sub Sector: ".replaceSubSectorfromIdToName($gPSSResult['sub_sub_sector_id'])."</h3>";
+                 getPlotTypeForAddProjectData($gPSSResult['id']);
                  getProjectSubSubSectorForAddProjectData($gPSSResult['id']);
          echo "</div>
          </div>";
@@ -648,9 +826,10 @@ function getProjectSubSectorForAddProjectData($projectSubSectorDataId){
     $gPSSDone = mysqli_query($conn,$gPSSQuery);
     while($gPSSResult = mysqli_fetch_assoc($gPSSDone)){
         echo "
-        <div class='row ml-2'>
+        <div class='row ml-4 mb-2'>
              <div class='col-lg-12'>
                  <h3 class='text-title text-black fw-900 fs-24'>Sub Sector: ".replaceSubSectorfromIdToName($gPSSResult['sub_sector_id'])."</h3>";
+                 getPlotTypeForAddProjectData($gPSSResult['id']);
                  getProjectSubSubSectorForAddProjectData($gPSSResult['id']);
          echo "</div>
          </div>";
@@ -665,6 +844,7 @@ function getProjectDenominationsForAddProjectData($projectDataId){
        <div class='row mb-4'>
             <div class='col-lg-12'>
                 <h2 class='text-title text-primary fw-900 fs-26'>Sector: ".replaceSectorfromIdToName($gPDResult['sector_id'])."</h2>";
+                getPlotTypeForAddProjectData($gPDResult['id']);
                 getProjectSubSectorForAddProjectData($gPDResult['id']);
         echo "</div>
         </div>";

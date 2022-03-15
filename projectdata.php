@@ -11,17 +11,6 @@ $curPpageTitle = "Project > ";
 
 ?>
 
-<style>
-.denoTableHr{
-    border-right:1px solid #c7c7c7;
-    border-left:1px solid #c7c7c7;
-}
-.denoTableH th{
-    border-right:1px solid #c7c7c7;
-    border-left:1px solid #c7c7c7;
-}
-    
-</style>
 
 <div class="row mt-4">
 
@@ -196,14 +185,14 @@ $curPpageTitle = "Project > ";
                                             <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-primary">Min</th>
-                                                            <th class="text-primary">Max</th>
+                                                            <th>Min</th>
+                                                            <th>Max</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="text-primary">Rs. 100</td>
-                                                            <td class="text-primary">Rs. 400</td>
+                                                            <td>Rs. 100</td>
+                                                            <td>Rs. 400</td>
                                                         </tr>
                                                     </tbody>
                                             </table>
@@ -212,14 +201,14 @@ $curPpageTitle = "Project > ";
                                             <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
+                                                            <th>Min</th>
+                                                            <th>Max</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
+                                                            <td>Rs. 100</td>
+                                                            <td>Rs. 400</td>
                                                         </tr>
                                                     </tbody>
                                             </table>
@@ -228,14 +217,14 @@ $curPpageTitle = "Project > ";
                                             <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
+                                                            <th>Min</th>
+                                                            <th>Max</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
+                                                            <td>Rs. 100</td>
+                                                            <td>Rs. 400</td>
                                                         </tr>
                                                     </tbody>
                                             </table>
@@ -244,14 +233,14 @@ $curPpageTitle = "Project > ";
                                             <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
+                                                            <th>Min</th>
+                                                            <th>Max</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
+                                                            <td>Rs. 100</td>
+                                                            <td>Rs. 400</td>
                                                         </tr>
                                                     </tbody>
                                             </table>
@@ -260,14 +249,14 @@ $curPpageTitle = "Project > ";
                                             <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
+                                                            <th>Min</th>
+                                                            <th>Max</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
+                                                            <td>Rs. 100</td>
+                                                            <td>Rs. 400</td>
                                                         </tr>
                                                     </tbody>
                                             </table>
@@ -276,14 +265,14 @@ $curPpageTitle = "Project > ";
                                             <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
+                                                            <th>Min</th>
+                                                            <th>Max</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
+                                                            <td>Rs. 100</td>
+                                                            <td>Rs. 400</td>
                                                         </tr>
                                                     </tbody>
                                             </table>
@@ -300,89 +289,4 @@ $curPpageTitle = "Project > ";
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-12 mt-4">
-        <div class="row mb-2">
-            <div class="col-md-12">
-                <h2 class="text-primary font-w600 fs-28 ">Commercial</h2>
-                <p>This data is based on One Week Average Performance</p>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table text-center">
-                                <thead>
-                                    <tr class="text-black">
-                                        <th>4 Marla</th>
-                                        <th>8 Marla</th>
-                                        <th>12 Marla</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-
-                                        <td>
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-success">Min</th>
-                                                            <th class="text-danger">Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-success">Rs. 100</td>
-                                                            <td class="text-danger">Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /# card -->
-            </div>
-        </div>
-    </div>
-</div>
 <?php include("inc/footer.php");?>

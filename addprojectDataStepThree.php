@@ -19,11 +19,9 @@ $projectDataId = $_GET['projectDataId'];
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="addprojectDataStepThree.php" method="GET">
+                                    <form action="i_addprojectData.php" method="GET">
                                         <div class="form">
                                             <?php getProjectDenominationsForAddProjectData($projectDataId);?>
-
-                                            
                                         </div>
                                         <button type="submit" class="btn btn-primary">Next Step</button>
                                     </form>
