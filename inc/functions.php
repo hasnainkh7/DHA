@@ -52,6 +52,19 @@ function replaceDenominationUnitfromIdToName($plotDenoId){
     return $gUNResult['unit_name'];
 }
 
+function replaceDenominationStatusfromIdToName($plotDenoId){
+    include("connection.php");
+    $gPDQuery = "SELECT * FROM plot_denomination WHERE plot_den_id = $plotDenoId";
+    $gPDData = mysqli_query($conn,$gPDQuery);
+    $gPDResult = mysqli_fetch_assoc($gPDData);
+    $plotTypeId = $gPDResult['plot_type'];
+    $gUNQuery = "SELECT * FROM `status` WHERE status_id = $plotTypeId";
+    $gUNData = mysqli_query($conn,$gUNQuery);
+    $gUNResult = mysqli_fetch_assoc($gUNData);
+
+    return $gUNResult['plot_type'];
+}
+
 function replaceRolefromIdToName($roleId){
     include("connection.php");
     if($roleId == 1){
@@ -482,7 +495,7 @@ function getProjectSubSubSectorsData($projectDataId,$sectorId,$projectSubSectorD
         while($gProLResult = mysqli_fetch_assoc($gProLData)){
             echo "
             <div class='col-4 col-sm-2'>
-                    <a href='sssector.php?projectData_id=".$projectDataId."&SectorId=".$sectorId."&projectSubSectorId=".$projectSubSectorDataId."&SubSectorId=".$subSectorId."&subSubSectorId=".$gProLResult['sub_sub_sector_id']."'>
+                    <a href='sssector.php?projectData_id=".$projectDataId."&SectorId=".$sectorId."&projectSubSectorId=".$projectSubSectorDataId."&SubSectorId=".$subSectorId."&subSubSectorId=".$gProLResult['sub_sub_sector_id']."&projectSubSubSectorId=".$gProLResult['id']."'>
                     <div class='card avtivity-card'>
                         <div class='card-body'>
                             <div class='media align-items-center'>
@@ -688,8 +701,7 @@ function getProjectSectorDenomonationTable($dataOf,$plotTypeID){
         $orQuery = $orQuery." OR data_of = ".$dataOf." AND denomination_id = ".$denoIdByType[$e];
         $e++;
     }
-
-echo $orQuery;
+    
     $gProSectorDenominationTableQuery = "SELECT * FROM `project_denominations` WHERE $orQuery";
     $gProSectorDenominationTableData = mysqli_query($conn,$gProSectorDenominationTableQuery);
     $DenoIdArray[] = "";
@@ -698,14 +710,16 @@ echo $orQuery;
     if(mysqli_num_rows($gProSectorDenominationTableData)!=0){
         while($gProSectorDenominationTableResult = mysqli_fetch_assoc($gProSectorDenominationTableData)){
             echo "
-            <th>".replaceDenominationfromIdToName($gProSectorDenominationTableResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gProSectorDenominationTableResult['denomination_id'])." <span class='badge light badge-success'>".replacePlotStatusfromDataIdToName($plotTypeID)."</span</th>
+            <th>".replaceDenominationfromIdToName($gProSectorDenominationTableResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gProSectorDenominationTableResult['denomination_id'])." <span class='badge light badge-success'>".replacePlotStatusfromDataIdToName($gProSectorDenominationTableResult['plot_status'])."</span</th>
             ";
             $DenoIdArray[$j] = $gProSectorDenominationTableResult['id'];
             $j++;
         }
         
+        
         $i = 0;
         echo "<tr>";
+
         while($i<count($DenoIdArray)){
     
             $donoId = $DenoIdArray[$i];
@@ -730,6 +744,9 @@ echo $orQuery;
             $i++;
         }
         echo "</tr>";
+    }else{
+        echo "
+            <p>There is no Data</p>";
     }
     
     

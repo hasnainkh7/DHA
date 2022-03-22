@@ -7,6 +7,8 @@ $SectorId = $_GET['SectorId'];
 $projectSubSectorId = $_GET['projectSubSectorId'];
 $SubSectorId = $_GET['SubSectorId'];
 $subSubSectorId = $_GET['subSubSectorId'];
+$projectSubSubSectorId = $_GET['projectSubSubSectorId'];
+
 
 $getProjectDataQuery = "SELECT * FROM `project_data` WHERE id = $projectDataId";
 $getProjectDataData = mysqli_query($conn,$getProjectDataQuery);
@@ -39,5 +41,5 @@ $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
 
 </div>
 
-<?php getPlotTypeDenomonationResTable($subSubSectorId);?>
+<?php getPlotTypeDenomonationResTable($projectSubSubSectorId);?>
 <?php include("inc/footer.php");?>

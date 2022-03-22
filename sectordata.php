@@ -157,6 +157,8 @@ $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
 </div>
 </div>
 
-<?php getPlotTypeDenomonationResTable($projectSectorId);?>
+<?php 
+// getPlotTypeDenomonationResTable($projectSectorId); 
+?>
 
 <?php include("inc/footer.php");?>
