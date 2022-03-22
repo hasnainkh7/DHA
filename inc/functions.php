@@ -683,14 +683,14 @@ function getProjectSectorDenomonationTable($dataOf,$plotTypeID){
     }
 
     $e = 1;
-    $orQuery = "denomination_id = 0";
+    $orQuery = "data_of = ".$dataOf." AND denomination_id = 1";
     while($e <= count($denoIdByType)-1){
-        $orQuery = $orQuery." OR denomination_id = ".$denoIdByType[$e];
+        $orQuery = $orQuery." OR data_of = ".$dataOf." AND denomination_id = ".$denoIdByType[$e];
         $e++;
     }
 
-
-    $gProSectorDenominationTableQuery = "SELECT * FROM project_denominations WHERE data_of = $dataOf AND $orQuery";
+echo $orQuery;
+    $gProSectorDenominationTableQuery = "SELECT * FROM `project_denominations` WHERE $orQuery";
     $gProSectorDenominationTableData = mysqli_query($conn,$gProSectorDenominationTableQuery);
     $DenoIdArray[] = "";
     $j = 0;
@@ -698,7 +698,7 @@ function getProjectSectorDenomonationTable($dataOf,$plotTypeID){
     if(mysqli_num_rows($gProSectorDenominationTableData)!=0){
         while($gProSectorDenominationTableResult = mysqli_fetch_assoc($gProSectorDenominationTableData)){
             echo "
-            <th>".replaceDenominationfromIdToName($gProSectorDenominationTableResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gProSectorDenominationTableResult['denomination_id'])." <span class='badge light badge-success'>".replacePlotStatusfromDataIdToName($gProSectorDenominationTableResult['plot_status'])."</span</th>
+            <th>".replaceDenominationfromIdToName($gProSectorDenominationTableResult['denomination_id'])." ".replaceDenominationUnitfromIdToName($gProSectorDenominationTableResult['denomination_id'])." <span class='badge light badge-success'>".replacePlotStatusfromDataIdToName($plotTypeID)."</span</th>
             ";
             $DenoIdArray[$j] = $gProSectorDenominationTableResult['id'];
             $j++;
