@@ -19,7 +19,7 @@ while($getProDenoResult = mysqli_fetch_assoc($getProDenoDone)){
     // echo "Min Value ".$minValue."<br>";
     // echo "Max Value ".$maxValue."<br>";
 
-    $today = date("m-d-Y");
+    $today = date("m-d-Y h:i:s A");
 
 
     $insertPriceQuery = "INSERT INTO `project_pricings`(`date`, `min`, `max`, `project_deno_id`, `is_approved`) VALUES ('$today','$minValue','$maxValue','$projectDenoId','0')";

@@ -79,5 +79,38 @@ include("inc/header.php");
 					</div>
 </div>
 
+<div class="row">
+					<div class="col-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Projects Progress</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example4" class="display">
+                                        <thead>
+                                            <tr>
+                                                <th>Project Name</th>
+                                                <th>125 Sq. yards</th>
+												<th>150 Sq. yards</th>
+												<th>200 Sq. yards</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>DHA City</td>
+                                                <td>+50</td>
+                                                <td>+12</td>
+                                                <td>+502</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+				</div>
+
 
 <?php include("inc/footer.php");?>

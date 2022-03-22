@@ -1,6 +1,11 @@
 <?php
 $curPpageTitle = "Add Project Data"; 
-include("inc/header.php");
+session_start();
+if($_SESSION["userData"]['role'] == 1){
+    include("inc/header.php");
+}elseif ($_SESSION["userData"]['role'] == 2) {
+    include("inc/dataCollectorheader.php");
+}
 
 $projectId = $_GET['projectId'];
 ?>

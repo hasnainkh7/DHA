@@ -701,7 +701,7 @@ function getProjectSectorDenomonationTable($dataOf,$plotTypeID){
         $orQuery = $orQuery." OR data_of = ".$dataOf." AND denomination_id = ".$denoIdByType[$e];
         $e++;
     }
-    
+    // echo $orQuery;
     $gProSectorDenominationTableQuery = "SELECT * FROM `project_denominations` WHERE $orQuery";
     $gProSectorDenominationTableData = mysqli_query($conn,$gProSectorDenominationTableQuery);
     $DenoIdArray[] = "";

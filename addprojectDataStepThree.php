@@ -1,6 +1,9 @@
 <?php
 $curPpageTitle = "Add Project Data"; 
-include("inc/header.php");
+
+    include("inc/dataCollectorheader.php");
+
+
 
 $projectDataId = $_GET['projectDataId'];
 ?>
