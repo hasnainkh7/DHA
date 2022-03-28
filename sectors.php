@@ -12,18 +12,11 @@ include("inc/header.php");
                                         <thead>
                                             <tr>
                                                 <th>Sector Name</th>
-                                                <th>Tools</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php getSectorTable();?>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Location Name</th>
-                                                <th>Tools</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>

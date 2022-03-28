@@ -44,7 +44,7 @@ $curPpageTitle = "Project > ";
 
 <div class="row mb-2">
     <div class="col-md-12">
-        <h2 class="text-primary font-w600 fs-28 ">Performance</h2>
+        <h2 class="text-primary font-w600 fs-28 ">Project Performance</h2>
     </div>
 </div>
 <div class="row">
@@ -154,139 +154,6 @@ $curPpageTitle = "Project > ";
 </div>
 </div>
 
-<div class="row">
-    <div class="col-md-12 mt-4">
-        <div class="row mb-2">
-            <div class="col-md-12">
-                <h2 class="text-primary font-w600 fs-28 ">Residential</h2>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table text-center denoTable">
-                                <thead class="denoTableH">
-                                    <tr class="text-black">
-                                        <th>125 Sq. Yards</th>
-                                        <th>200 Sq. Yards</th>
-                                        <th>250 Sq. Yards</th>
-                                        <th>300 Sq. Yards</th>
-                                        <th>500 Sq. Yards</th>
-                                        <th>1000 Sq. Yards</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="denoTableHr">
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Min</th>
-                                                            <th>Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Rs. 100</td>
-                                                            <td>Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                        <td class="denoTableHr">
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Min</th>
-                                                            <th>Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Rs. 100</td>
-                                                            <td>Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                        <td class="denoTableHr">
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Min</th>
-                                                            <th>Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Rs. 100</td>
-                                                            <td>Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                        <td class="denoTableHr">
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Min</th>
-                                                            <th>Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Rs. 100</td>
-                                                            <td>Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                        <td class="denoTableHr">
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Min</th>
-                                                            <th>Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Rs. 100</td>
-                                                            <td>Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                        <td class="denoTableHr">
-                                            <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Min</th>
-                                                            <th>Max</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Rs. 100</td>
-                                                            <td>Rs. 400</td>
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /# card -->
-            </div>
-        </div>
-    </div>
-</div>
+<?php getProjectAvgPriceDataTable($projectDataId); ?>
 
 <?php include("inc/footer.php");?>

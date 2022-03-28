@@ -2,7 +2,7 @@
 
 include("inc/connection.php");
 
-$projectDataId = $_GET['projectDataId'];
+$projectDataId = $_POST['projectDataId'];
 
 echo "Project ID: ".$projectDataId."<br>";
 $query = "SELECT * FROM project_data WHERE id = $projectDataId";
@@ -20,10 +20,10 @@ while($result = mysqli_fetch_assoc($done)){
 
         $getSectorKeyValue = "denominationValueOfSubSubSector".$projectSectorId;
         echo "get Sector key values: ".$getSectorKeyValue."<br>";
-        $getSectorValue = $_GET[$getSectorKeyValue];
+        $getSectorValue = $_POST[$getSectorKeyValue];
 
         $getStatusKeyValue = "statusOf".$projectSectorId;
-        $getStatusValue = $_GET[$getStatusKeyValue];
+        $getStatusValue = $_POST[$getStatusKeyValue];
 
         foreach ($getSectorValue as $selectedOption){
             echo $selectedOption."<br>";
@@ -53,10 +53,10 @@ while($result = mysqli_fetch_assoc($done)){
             $projectSubSectorId = $subSectorResult['id'];
             $getSubSectorKeyValue = "denominationValueOfSubSubSector".$projectSubSectorId;
             echo "get Sub Sector key values: ".$getSubSectorKeyValue."<br>";
-            $getSubSectorValue = $_GET[$getSubSectorKeyValue];
+            $getSubSectorValue = $_POST[$getSubSectorKeyValue];
 
             $getStatusKeyValue = "statusOf".$projectSubSectorId;
-            $getStatusValue = $_GET[$getStatusKeyValue];
+            $getStatusValue = $_POST[$getStatusKeyValue];
 
             foreach ($getSubSectorValue as $selectedOption){
                 echo $selectedOption."<br>";
@@ -81,21 +81,21 @@ while($result = mysqli_fetch_assoc($done)){
                 $projectSubSubSectorId = $subSubSubSectorResult['id'];
                 $getSubSubSectorKeyValue = "denominationValueOfSubSubSector".$projectSubSubSectorId;
 
-                $getSubSubSectorValue = $_GET[$getSubSubSectorKeyValue];
+                $getSubSubSectorValue = $_POST[$getSubSubSectorKeyValue];
 
                 $getStatusKeyValue = "statusOf".$projectSubSectorId;
-                $getStatusValue = $_GET[$getStatusKeyValue];
+                $getStatusValue = $_POST[$getStatusKeyValue];
 
                 foreach ($getSubSubSectorValue as $selectedOption){
                     echo $selectedOption."<br>";
 
                     foreach ($getStatusValue as $selectedStatusOption){
-                        echo $selectedStatusOption."<br>";
+                        
                         $InsertQuery = "INSERT INTO `project_denominations`(`denomination_id`, `plot_status`, `data_of`) VALUES ('$selectedOption','$selectedStatusOption','$projectSubSubSectorId')";
                         
                         $dataInserted = mysqli_query($conn,$InsertQuery);
                         if($dataInserted){
-                            echo "Denomination Inserted";
+                            header("location:projectdata.php?projectDataId=".$projectDataId);
                         }
 
                     }
@@ -109,5 +109,5 @@ while($result = mysqli_fetch_assoc($done)){
     }
 
 }
-header("location:projectdata.php?projectDataId=".$projectDataId);
+
 ?>

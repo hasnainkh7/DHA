@@ -1,8 +1,8 @@
 <?php
 
 include("inc/connection.php");
-$projectName = $_GET['projectName'];
-$projectLocations = $_GET['locations'];
+$projectName = $_POST['projectName'];
+$projectLocations = $_POST['locations'];
 $randomId = rand(99,999);
 
 $projectInsertQuery = "INSERT INTO `projects` (`project_id`, `project_name`) VALUES ('$randomId','$projectName')";

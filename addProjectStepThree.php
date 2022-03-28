@@ -49,7 +49,7 @@ input[type=checkbox]:checked ~ .title {
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="i_addProjectSctors.php" method="GET">
+                                    <form action="i_addProjectSctors.php" method="POST">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <div class="row mb-2">

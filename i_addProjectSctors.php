@@ -1,9 +1,9 @@
 <?php
 
 include("inc/connection.php");
-$projectSectors = $_GET['sectors'];
-$projectId = $_GET['projectId'];
-$locationId = $_GET['locationId'];
+$projectSectors = $_POST['sectors'];
+$projectId = $_POST['projectId'];
+$locationId = $_POST['locationId'];
 
 $selectProjectIdQuery = "SELECT * FROM `project_data` WHERE project_id = $projectId AND location_id = $locationId";
 $selectProjectIdDone = mysqli_query($conn,$selectProjectIdQuery);

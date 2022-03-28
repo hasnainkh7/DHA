@@ -48,7 +48,7 @@ input[type=checkbox]:checked ~ .title {
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="i_addSubSectors.php" method="GET">
+                                    <form action="i_addSubSectors.php" method="POST">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <input type="hidden" value="<?php echo $projectDataId;?>" name="projectDataId">

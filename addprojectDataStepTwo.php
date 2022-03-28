@@ -27,6 +27,7 @@ $projectId = $_GET['projectId'];
                                     <form action="addprojectDataStepThree.php" method="GET">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
+                                                <input type="hidden" name="userRole" value="<?php echo $_SESSION['userData']['role'];  ?>">
                                                 <label>Locations</label>
                                                 <select class="multi-select" name="projectDataId" placeholder="Please Select Cities">
                                                     <option readonly>Select Location</option>

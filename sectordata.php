@@ -157,8 +157,7 @@ $getProjectDataResult = mysqli_fetch_assoc($getProjectDataData);
 </div>
 </div>
 
-<?php 
-// getPlotTypeDenomonationResTable($projectSectorId); 
-?>
+
+<?php getProjectSectorAvgPriceDataTable($projectDataId,$projectSectorId); ?>
 
 <?php include("inc/footer.php");?>

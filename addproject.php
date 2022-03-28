@@ -14,7 +14,7 @@ include("inc/header.php");
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="i_addProject.php" method="GET">
+                                    <form action="i_addProject.php" method="POST">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>Project Name</label>

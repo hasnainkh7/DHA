@@ -8,12 +8,12 @@ include("inc/header.php");
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    <form action="i_addPlotType.php" method="POST">
 
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>Plot Type</label>
-                                                <input type="text" class="form-control" placeholder="Enter Plot Type">
+                                                <input type="text" class="form-control" name="plotName" placeholder="Enter Plot Type">
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Add Plot Type</button>

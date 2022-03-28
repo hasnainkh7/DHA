@@ -2,7 +2,7 @@
 
 include("inc/connection.php");
 
-$projectDataId = $_GET['projectDataId'];
+$projectDataId = $_POST['projectDataId'];
 
 echo $projectDataId."<br>";
 
@@ -14,7 +14,7 @@ while($result = mysqli_fetch_assoc($done)){
     $sectorDataID = $result['id'];
     $subSectorGetID = 'sub_SectorsOf'.$sectorDataID;
     
-    $sectorGetData = $_GET[$subSectorGetID];
+    $sectorGetData = $_POST[$subSectorGetID];
     
         foreach ($sectorGetData as $selectedOption){
     

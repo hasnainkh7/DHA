@@ -2,7 +2,7 @@
 
 include("inc/connection.php");
 
-$projectDataId = $_GET['projectDataId'];
+$projectDataId = $_POST['projectDataId'];
 
 
 $query = "SELECT * FROM project_sector WHERE projectData_id = $projectDataId";
@@ -18,7 +18,7 @@ while($result = mysqli_fetch_assoc($done)){
         while($selectSubSectorResult = mysqli_fetch_assoc($selectSubSectorDone)){
             echo $selectSubSectorResult['id']."<br>";
             $GetDataKey = "sub_sub_SectorsOf".$selectSubSectorResult['id'];
-            $GetDataText = $_GET[$GetDataKey];
+            $GetDataText = $_POST[$GetDataKey];
 
             foreach ($GetDataText as $selectedOption){
     

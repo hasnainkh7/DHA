@@ -22,7 +22,7 @@ $projectDataId = $_GET['projectDataId'];
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="i_addProjectDenomination.php" method="GET">
+                                    <form action="i_addProjectDenomination.php" method="POST">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <input name="projectDataId" type="hidden" value="<?php echo $projectDataId;?>">

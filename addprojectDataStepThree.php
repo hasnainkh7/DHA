@@ -1,11 +1,16 @@
 <?php
-$curPpageTitle = "Add Project Data"; 
 
-    include("inc/dataCollectorheader.php");
-
+$curPpageTitle = "Add Project Data";
 
 
 $projectDataId = $_GET['projectDataId'];
+$userRole = $_GET['userRole'];
+
+if($userRole == 1){
+    include("inc/header.php");
+}else{
+    include("inc/dataCollectorheader.php");
+}
 ?>
 
 <div class="row">
@@ -22,8 +27,9 @@ $projectDataId = $_GET['projectDataId'];
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="i_addprojectData.php" method="GET">
+                                    <form action="i_addprojectData.php" method="POST">
                                         <div class="form">
+                                            <input name="projectDataId" type="hidden" value="<?php echo $projectDataId; ?>">
                                             <?php getProjectDenominationsForAddProjectData($projectDataId);?>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Next Step</button>

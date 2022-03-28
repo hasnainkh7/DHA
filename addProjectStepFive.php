@@ -47,7 +47,7 @@ input[type=checkbox]:checked ~ .title {
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="i_addSubSubSectors.php" method="GET">
+                                    <form action="i_addSubSubSectors.php" method="POST">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <div id="accordion-three" class="accordion accordion-no-gutter accordion-header-bg">

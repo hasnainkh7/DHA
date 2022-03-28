@@ -8,35 +8,25 @@ include("inc/header.php");
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    <form method="POST" action="i_adddenomination.php">
 
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>Denomination</label>
-                                                <input type="number" class="form-control" placeholder="Enter Denominations">
+                                                <input type="number" class="form-control" name="denomination" placeholder="Enter Denominations">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label>Project</label>
-                                                    <select class="dropdown-groups">
-                                                        <optgroup label="DHA">
-                                                            <option>DHA - Karachi</option>
-                                                            <option>DHA - Islamabad</option>
-                                                            <option>DHA - Lahore</option>
-                                                        </optgroup>
-                                                        <optgroup label="Askari">
-                                                            <option>Askari - Karachi</option>
-                                                            <option>Askari - Islamabad</option>
-                                                            <option>Askari - Lahore</option>
-                                                        </optgroup>
+                                                <label>Plot Type</label>
+                                                    <select class="dropdown-groups" name="plotType">
+                                                            <?php getPlotTypeSelect(); ?>
                                                     </select>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label>Status</label>
-                                                    <select class="dropdown-groups">
-                                                            <option>Plot</option>
-                                                            <option>File</option>
+                                                <label>Unit</label>
+                                                    <select class="dropdown-groups" name="unit">
+                                                            <?php getUnitSelect(); ?>
                                                     </select>
                                             </div>
                                         </div>
@@ -45,8 +35,6 @@ include("inc/header.php");
                                 </div>
                             </div>
                         </div>
-
-
 <script>
 
 </script>                        
