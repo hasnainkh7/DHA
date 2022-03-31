@@ -74,28 +74,29 @@ if($_SESSION["userData"]['role'] == 2){
                                 <div class="dropdown-menu rounded dropdown-menu-right">
                                     <div id="DZ_W_Notification1" class="widget-media dz-scroll p-3 height380">
 										<ul class="timeline">
-											<li>
-												<div class="timeline-panel">
-													<div class="media mr-2">
-														<img alt="image" width="50" src="images/avatar/1.jpg">
+                                                <li>
+													<div class="timeline-panel">
+														<div class="media mr-2">
+															<i class="text-info fa fa-plus"></i>
+														</div>
+														<div class="media-body">
+															<h6 class="mb-1">Data Collector ABC Added Prices to DHA - Karachi</h6>
+															<small class="d-block">29 July 2022 - 02:26 PM</small>
+														</div>
 													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Dr sultads Send you Photo</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
+												</li>
+
+												<li>
+													<div class="timeline-panel">
+														<div class="media mr-2">
+														<i class="text-info fa fa-plus"></i>
+														</div>
+														<div class="media-body">
+															<h6 class="mb-1">Data Collector CBA Added Prices to Askari - Karachi</h6>
+															<small class="d-block">21 July 2022 - 02:26 PM</small>
+														</div>
 													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media mr-2 media-primary">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
+												</li>
 										</ul>
 									</div>
                                     <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>
