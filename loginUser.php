@@ -37,6 +37,11 @@ if($count != 0){
         
     }
 
+}else{
+    echo '<script type="text/javascript">'; 
+    echo 'alert("Wrong Username or Password");'; 
+    echo 'window.location.href = "index.php";';
+    echo '</script>';
 }
 
 

@@ -64,6 +64,26 @@ if($_SESSION["userData"]['role'] == 2){
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
+
+                            <li class="nav-item notification_dropdown">
+                                <a class="nav-link ai-icon" href="index.php">
+                                    <svg width="28"  height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
+                                        <path style="fill:var(--portalGreen) !important;" xmlns="http://www.w3.org/2000/svg" d="m30 24v4c0 1.103-.897 2-2 2h-24c-1.103 0-2-.897-2-2v-4c0-.552.448-1 1-1s1 .448 1 1v4h24v-4c0-.552.448-1 1-1s1 .448 1 1z" fill="#000000" data-original="#000000" class=""></path><path style="fill:var(--portalGreen) !important;" xmlns="http://www.w3.org/2000/svg" d="m8.293 16.707c-.391-.391-.391-1.023 0-1.414s1.023-.391 1.414 0l5.293 5.293v-17.586c0-.552.448-1 1-1s1 .448 1 1v17.586l5.293-5.293c.391-.391 1.023-.391 1.414 0s.391 1.023 0 1.414l-7 7c-.396.397-1.031.384-1.415 0z" fill="#000000" data-original="#000000" class=""></path></g>
+                                    </svg>
+                                </a>
+                                <span class="ml-2 fw-900 fs-14">Download Data</span>
+                            </li>
+
+                            <li class="nav-item notification_dropdown">
+                                <a class="nav-link ai-icon" href="index.php">
+                                <svg  width="28"  height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
+                                    <path style="fill:var(--portalGreen) !important;" xmlns="http://www.w3.org/2000/svg" d="m21 7.5h-9.793l3.14649 3.14648a.5.5 0 1 1 -.707.707l-4-4a.49983.49983 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707l-3.14649 3.14652h9.793a.5.5 0 0 1 0 1zm-11.35352 13.85352a.49984.49984 0 0 0 .707 0l4-4a.49983.49983 0 0 0 0-.707l-4-4a.5.5 0 0 0 -.707.707l3.14652 3.14648h-9.793a.5.5 0 0 0 0 1h9.793l-3.14652 3.14648a.49983.49983 0 0 0 0 .70704z" fill="#000000" data-original="#000000" class=""></path></g>
+                                </svg>
+                                </a>
+                                <span class="ml-2 fw-900 fs-14">Compare</span>
+                            </li>
+                          
+
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link  ai-icon" href="javascript:void(0)" role="button" data-toggle="dropdown">
                                     <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -71,6 +91,7 @@ if($_SESSION["userData"]['role'] == 2){
 									</svg>
 									<div class="pulse-css"></div>
                                 </a>
+                                <span class="ml-2 fw-900 fs-14">Notifications</span>
                                 <div class="dropdown-menu rounded dropdown-menu-right">
                                     <div id="DZ_W_Notification1" class="widget-media dz-scroll p-3 height380">
 										<ul class="timeline">
@@ -102,7 +123,6 @@ if($_SESSION["userData"]['role'] == 2){
                                     <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>
                                 </div>
                             </li>
-							
 							
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
@@ -210,7 +230,7 @@ if($_SESSION["userData"]['role'] == 2){
 							<li><a href="adduser.php">Add User</a></li>
 						</ul>
                     </li>
-                    <li><a class="ai-icon" href="#" aria-expanded="false">
+                    <li><a class="ai-icon" href="contact.php" aria-expanded="false">
 							<i class="flaticon-381-ring"></i>
 							<span class="nav-text">Contact Us</span>
 						</a>

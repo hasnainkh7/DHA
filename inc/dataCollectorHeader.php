@@ -145,7 +145,12 @@ if($_SESSION["userData"]['role'] == 1){
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-                    <li><a class="ai-icon" href="#" aria-expanded="false">
+                    <li><a href="dataadded_Collector.php" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-database"></i>
+							<span class="nav-text">Owerview</span>
+						</a>
+					</li>
+                    <li><a class="ai-icon" href="contact_datacol.php" aria-expanded="false">
 							<i class="flaticon-381-ring"></i>
 							<span class="nav-text">Contact Us</span>
 						</a>
