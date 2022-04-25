@@ -58,6 +58,13 @@
 		});
 	</script>
 
+<script>
+
+document.body.style.zoom = "80%";
+
+
+</script>
+
 
 <!-- Form Steps -->
 <script src="./vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>

@@ -26,7 +26,7 @@ if($_SESSION["userData"]['role'] == 2){
     <!--**********************************
         Main wrapper start
     ***********************************-->
-    <div id="main-wrapper">
+    <div id="main-wrapper" class="show menu-toggle">
 
         <!--**********************************
             Nav header start
@@ -37,12 +37,12 @@ if($_SESSION["userData"]['role'] == 2){
             </a> -->
 
             <a href="index.php" class="brand-logo">
-                <img class="logo-abbr" src="./images/logo1.png" alt="">
-                <img class="logo-compact" src="./images/logo1.png" alt="">
+                <img class="logo-abbr" src="./images/logo2.png" alt="">
+                <img class="logo-compact" src="./images/logo2.png" alt="">
                 <img class="brand-title" src="./images/logo-text1.png" alt="">
             </a>
             <div class="nav-control">
-                <div class="hamburger">
+                <div class="hamburger is-active">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
             </div>
@@ -75,13 +75,15 @@ if($_SESSION["userData"]['role'] == 2){
                             </li>
 
                             <li class="nav-item notification_dropdown">
-                                <a class="nav-link ai-icon" href="index.php">
+                                <a class="nav-link ai-icon"  data-toggle="modal" data-target="#filterModal">
                                 <svg  width="28"  height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
                                     <path style="fill:var(--portalGreen) !important;" xmlns="http://www.w3.org/2000/svg" d="m21 7.5h-9.793l3.14649 3.14648a.5.5 0 1 1 -.707.707l-4-4a.49983.49983 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707l-3.14649 3.14652h9.793a.5.5 0 0 1 0 1zm-11.35352 13.85352a.49984.49984 0 0 0 .707 0l4-4a.49983.49983 0 0 0 0-.707l-4-4a.5.5 0 0 0 -.707.707l3.14652 3.14648h-9.793a.5.5 0 0 0 0 1h9.793l-3.14652 3.14648a.49983.49983 0 0 0 0 .70704z" fill="#000000" data-original="#000000" class=""></path></g>
                                 </svg>
                                 </a>
-                                <span class="ml-2 fw-900 fs-14">Compare</span>
+                                <span class="ml-2 fw-900 fs-14">Filters</span>
                             </li>
+
+                            
                           
 
 							<li class="nav-item dropdown notification_dropdown">
