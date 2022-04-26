@@ -25,7 +25,7 @@ if($_SESSION["userData"]['role'] == 1){
     <!--**********************************
         Main wrapper start
     ***********************************-->
-    <div id="main-wrapper">
+    <div id="main-wrapper"  class="show menu-toggle">
 
         <!--**********************************
             Nav header start
@@ -36,12 +36,12 @@ if($_SESSION["userData"]['role'] == 1){
             </a> -->
 
             <a href="index.php" class="brand-logo">
-                <img class="logo-abbr" src="./images/logo1.png" alt="">
-                <img class="logo-compact" src="./images/logo1.png" alt="">
-                <img class="brand-title" src="./images/logo-text1.png" alt="">
+                <img class="logo-abbr" src="./images/logo3.png" alt="" style="border-radius:50%;">
+                <img class="logo-compact" src="./images/logo3.png" alt="" style="border-radius:50%;">
+                <img class="brand-title" src="./images/logo-text2.png" alt="">
             </a>
             <div class="nav-control">
-                <div class="hamburger">
+                <div class="hamburger is-active">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
             </div>

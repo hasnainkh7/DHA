@@ -14,6 +14,18 @@
 	
 	<!-- Apex Chart -->
 	<script src="./vendor/apexchart/apexchart.js"></script>
+
+
+	<!-- Chart Morris plugin files -->
+    <script src="./vendor/morris/raphael-min.js"></script>
+    <script src="./vendor/morris/morris.min.js"></script>
+    <script src="./js/plugins-init/morris-init.js"></script>
+
+	
+    <!-- Chart ChartJS plugin files -->
+    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="./js/plugins-init/chartjs-init.js"></script>
+
 	
 	<!-- Dashboard 1 -->
 	<script src="./js/dashboard/dashboard-1.js"></script>
@@ -58,12 +70,41 @@
 		});
 	</script>
 
+
+
 <script>
 
 document.body.style.zoom = "80%";
 
+function selectedRow(){
+                
+                var index,
+                    table = document.getElementById("table");
+            
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                         // remove the background from the previous selected row
+                        if(typeof index !== "undefined"){
+                           table.rows[index].classList.toggle("selectedRow");
+                        }
+                        console.log(typeof index);
+                        // get the selected row index
+                        index = this.rowIndex;
+                        // add class selected to the row
+                        this.classList.toggle("selectedRow");
+                        console.log(typeof index);
+                     };
+                }
+                
+            }
+selectedRow();
+
 
 </script>
+
+
 
 
 <!-- Form Steps -->

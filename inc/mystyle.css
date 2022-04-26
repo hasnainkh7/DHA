@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 .table-row:hover{
-    background-color: rgba(240, 241, 245, 0.77) !important;
+    background-color: rgba(209, 210, 213, 0.5) !important;
 }
 .noneMe{
     background-color:red;
@@ -87,4 +87,25 @@
 
 .bg-myprimary{
     background-color: #227538 !important;
+}
+
+.bg-myblue{
+    background-color: #181f39 !important;
+}
+.table-responsive{
+    margin-bottom: 15px !important;
+}
+
+.selectedRow{
+    background-color: rgba(209, 210, 213, 0.85) !important;
+}
+
+
+.modal-backdrop{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.nav-header{
+    z-index: 10 !important;
 }

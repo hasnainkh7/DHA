@@ -8,8 +8,8 @@ include("inc/header.php");
 	@media only screen and (min-width: 768px){
 		body{
 			overflow: visible !important;
-			max-width: 230% !important;
-			width: 230% !important;
+			max-width: 250% !important;
+			width: 250% !important;
 		}
 	}
 </style>
@@ -19,20 +19,23 @@ include("inc/header.php");
 <div class="row">	
 	<div class="col-lg-12">
         <div class="card">
-            <div class="card-header bg-info">
+            <div class="card-header bg-mydark">
                 <h3 class="card-title text-white fs-28">Defence Housing Authority</h3>
 				<small class="text-white"><b>Last Updated:</b> 13 April 2022</small>
+				<button type="button" class="btn light btn-success" data-toggle="modal" data-target="#analyticsModal">Analytics</button>
+
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                	<table class="table b-b table-responsive-md text-center">
+                	<table class="table b-b table-responsive-md text-center" id="table">
                     	<thead class="b-tlr myHeader">
-                        	<tr class="text-white bg-mydark">
+                        	<tr class="text-white bg-myblue">
 								<th>Project</th>
 								<th>City</th>
                             	<th>Performance</th>
-                            	<th>Commercial Plots</th>
-                            	<th>Residential Plots</th>
+                            	<th class="bg-info">Commercial Plots</th>
+                            	<th class="bg-warning">Residential Plots</th>
+								<th>Last Updated</th>
 							</tr>
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
 								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
@@ -51,7 +54,7 @@ include("inc/header.php");
 									</table>
 								</th>
 
-								<th class="text-black bg-myprimary">
+								<th class="text-black bg-myprimary" style="border-right:1px solid #fff !important;">
 									<table  class="table text-center">
 										<thead class="text-white bg-myprimary">
 											<th>4 Marla</th>
@@ -61,7 +64,7 @@ include("inc/header.php");
 										<tbody>
 											<td class="text-success b-r">
 												<table class="table text-center b-lr">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -71,7 +74,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -81,7 +84,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -93,7 +96,7 @@ include("inc/header.php");
 								</th>
 
 
-								<th class="b3-lr bg-myprimary">
+								<th class="b3-lr bg-myprimary" style="border-right:1px solid #fff !important;">
 									<table  class="table text-center">
 										<thead class="text-white">
 											<th>125 Sq Yds</th>
@@ -106,7 +109,7 @@ include("inc/header.php");
 										<tbody>
 											<td class="text-success b-r">
 												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -116,7 +119,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -126,7 +129,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -136,7 +139,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -146,7 +149,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -156,7 +159,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -166,6 +169,7 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</th>
+								<th class="b3-lr bg-myprimary"></th>
 							
                         	</tr>
                     	</thead>
@@ -186,11 +190,11 @@ include("inc/header.php");
 										</thead>
 										<tbody>
 										<tr class="mt-2">
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tr>
 										</tbody>
 									</table>
@@ -356,6 +360,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -372,11 +378,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -541,6 +547,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -557,11 +565,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -726,6 +734,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -742,11 +752,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -911,6 +921,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -927,11 +939,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -1096,6 +1108,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+								
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -1112,11 +1126,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -1281,6 +1295,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -1297,11 +1313,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -1466,6 +1482,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -1482,11 +1500,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -1651,6 +1669,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -1667,11 +1687,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -1836,6 +1856,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
 							
                         	</tr>
 
@@ -1852,11 +1874,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2021,7 +2043,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
-							
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
                     	</tbody>
@@ -2033,19 +2056,21 @@ include("inc/header.php");
 
 	<div class="col-lg-12">
         <div class="card">
-            <div class="card-header bg-success">
+            <div class="card-header bg-mydark">
                 <h3 class="card-title text-white fs-28">Army Officers Housing Society</h3>
 				<small class="text-white"><b>Last Updated:</b> 13 April 2022</small>
+				<button type="button" class="btn light btn-success" data-toggle="modal" data-target="#analyticsModal">Analytics</button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                	<table class="table b-b table-responsive-md text-center">
+                	<table class="table b-b table-responsive-md text-center" id="table">
                     	<thead class="b-tlr">
-                        	<tr class="text-white bg-mydark">
+                        	<tr class="text-white bg-myblue">
 								<th>Project</th>
 								<th>City</th>
                             	<th>Performance</th>
-                            	<th>Type</th>
+                            	<th class="bg-info">Type</th>
+								<th>Last Updated</th>
 							</tr>
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
 								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
@@ -2073,7 +2098,7 @@ include("inc/header.php");
 										<tbody>
 											<td class="text-success b-r">
 												<table class="table text-center b-lr">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -2083,7 +2108,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -2093,7 +2118,7 @@ include("inc/header.php");
 
 											<td class="text-success b-r">
 												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -2102,7 +2127,7 @@ include("inc/header.php");
 											</td>
 											<td class="text-success b-r">
 												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
+													<thead class="text-white">
 														<th class="cw-30">Min</th>
 														<th class="cw-10"></th>
 														<th class="cw-30">Max</th>
@@ -2112,6 +2137,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</th>
+
+								<th class=" bg-myprimary"></th>
                         	</tr>
                     	</thead>
                     	<tbody>
@@ -2129,11 +2156,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2208,6 +2235,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 							<tr class="borderTop table-row alternate-bg" data-href="projectdata_tab.php">
@@ -2223,11 +2252,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2302,6 +2331,7 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
@@ -2317,11 +2347,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2396,6 +2426,7 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 							
 							<tr class="borderTop table-row alternate-bg" data-href="projectdata_tab.php">
@@ -2411,11 +2442,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2490,6 +2521,7 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
@@ -2505,11 +2537,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2584,6 +2616,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 
@@ -2601,11 +2635,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2680,6 +2714,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 
@@ -2696,11 +2732,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2775,6 +2811,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 
@@ -2791,11 +2829,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2870,6 +2908,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
@@ -2885,11 +2925,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -2964,6 +3004,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 
@@ -2980,11 +3022,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -3059,6 +3101,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 
@@ -3075,11 +3119,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -3154,6 +3198,8 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
 
 							<tr class="borderTop table-row alternate-bg" data-href="projectdata_tab.php">
@@ -3169,11 +3215,11 @@ include("inc/header.php");
 											<th>1 Y</th>
 										</thead>
 										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),1); ?>%</td>
 										</tbody>
 									</table>
 								</td>
@@ -3248,1093 +3294,9 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</td>
+
+								<td class="text-black">26 April 2022</td>
                         	</tr>
-
-                    	</tbody>
-               		</table>
-            	</div>
-        	</div>
-    	</div>
-	</div>
-
-	<div class="col-lg-12">
-        <div class="card">
-            <div class="card-header bg-warning">
-                <h3 class="card-title text-white fs-28">Bahria Town</h3>
-				<small class="text-white"><b>Last Updated:</b> 13 April 2022</small>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                	<table class="table b-b table-responsive-md text-center">
-                    	<thead class="b-tlr">
-                        	<tr class="text-white bg-mydark">
-								<th>Project</th>
-								<th>City</th>
-                            	<th>Performance</th>
-                            	<th>Commercial Plots</th>
-                            	<th>Residential Plots</th>
-							</tr>
-							<tr class="borderTop table-row" data-href="projectdata_tab.php">
-								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
-								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
-								<th class="b3-lr bg-myprimary" style="border-right:1px solid #fff !important;">
-									<table  class="table text-center">
-										<thead class="text-white">
-											<tr>
-											<th>1 W</th>
-											<th>1 M</th>
-											<th>3 M</th>
-											<th>6 M</th>
-											<th>1 Y</th>
-											</tr>
-										</thead>
-									</table>
-								</th>
-
-								<th class="text-black bg-myprimary">
-									<table  class="table text-center">
-										<thead class="text-white bg-myprimary">
-											<th>4 Marla</th>
-											<th>8 Marla</th>
-											<th>1 Kanal</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table text-center b-lr">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</th>
-
-
-								<th class="b3-lr bg-myprimary">
-									<table  class="table text-center">
-										<thead class="text-white">
-											<th>125 Sq Yds</th>
-											<th>200 Sq Yds</th>
-											<th>250 Sq Yds</th>
-											<th>300 Sq Yds</th>
-											<th>500 Sq Yds</th>
-											<th>1000 Sq Yds</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-white bg-mydark">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</th>
-							
-                        	</tr>
-                    	</thead>
-                    	<tbody>
-                        	<tr class="borderTop table-row" data-href="projectdata_tab.php">
-								<td class="b3-lr text-left">Bahria Town Karachi</td> 
-								<td class="b3-lr text-left">Karachi</td> 
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-white noneMe">
-											<th>1 W</th>
-											<th>1 M</th>
-											<th>3 M</th>
-											<th>6 M</th>
-											<th>1 Y</th>
-										</thead>
-										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-										</tbody>
-									</table>
-								</td>
-
-								<td class="text-black">
-									<table  class="table text-center">
-										<thead class="text-white noneMe">
-											<th>4 Marla</th>
-											<th>8 Marla</th>
-											<th>1 Kanal</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table text-center b-lr">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-
-
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-white noneMe">
-											<th>125 Sq Yds</th>
-											<th>200 Sq Yds</th>
-											<th>250 Sq Yds</th>
-											<th>300 Sq Yds</th>
-											<th>500 Sq Yds</th>
-											<th>1000 Sq Yds</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-							
-                        	</tr>
-
-							<tr class="borderTop table-row alternate-bg" data-href="projectdata_tab.php">
-								<td class="b3-lr text-left">Bahria Town Lahore</td> 
-								<td class="b3-lr text-left">Lahore</td> 
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>1 W</th>
-											<th>1 M</th>
-											<th>3 M</th>
-											<th>6 M</th>
-											<th>1 Y</th>
-										</thead>
-										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-										</tbody>
-									</table>
-								</td>
-
-								<td class="text-black">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>4 Marla</th>
-											<th>8 Marla</th>
-											<th>1 Kanal</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table text-center b-lr">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-
-
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>125 Sq Yds</th>
-											<th>200 Sq Yds</th>
-											<th>250 Sq Yds</th>
-											<th>300 Sq Yds</th>
-											<th>500 Sq Yds</th>
-											<th>1000 Sq Yds</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-							
-                        	</tr>
-
-							<tr class="borderTop table-row" data-href="projectdata_tab.php">
-								<td class="b3-lr text-left">Bahria Town Islamabad</td> 
-								<td class="b3-lr text-left">Islamabad</td> 
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>1 W</th>
-											<th>1 M</th>
-											<th>3 M</th>
-											<th>6 M</th>
-											<th>1 Y</th>
-										</thead>
-										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-										</tbody>
-									</table>
-								</td>
-
-								<td class="text-black">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>4 Marla</th>
-											<th>8 Marla</th>
-											<th>1 Kanal</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table text-center b-lr">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-
-
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>125 Sq Yds</th>
-											<th>200 Sq Yds</th>
-											<th>250 Sq Yds</th>
-											<th>300 Sq Yds</th>
-											<th>500 Sq Yds</th>
-											<th>1000 Sq Yds</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-							
-                        	</tr>
-
-							<tr class="borderTop table-row alternate-bg" data-href="projectdata_tab.php">
-								<td class="b3-lr text-left">Bahria Enclave</td> 
-								<td class="b3-lr text-left">Islamabad</td> 
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>1 W</th>
-											<th>1 M</th>
-											<th>3 M</th>
-											<th>6 M</th>
-											<th>1 Y</th>
-										</thead>
-										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-										</tbody>
-									</table>
-								</td>
-
-								<td class="text-black">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>4 Marla</th>
-											<th>8 Marla</th>
-											<th>1 Kanal</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table text-center b-lr">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-
-
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>125 Sq Yds</th>
-											<th>200 Sq Yds</th>
-											<th>250 Sq Yds</th>
-											<th>300 Sq Yds</th>
-											<th>500 Sq Yds</th>
-											<th>1000 Sq Yds</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-							
-                        	</tr>
-
-							<tr class="borderTop table-row" data-href="projectdata_tab.php">
-								<td class="b3-lr text-left">Bahria Town Nawabshah</td> 
-								<td class="b3-lr text-left">Nawabshah</td> 
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>1 W</th>
-											<th>1 M</th>
-											<th>3 M</th>
-											<th>6 M</th>
-											<th>1 Y</th>
-										</thead>
-										<tbody>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-danger wd-150px">-<?php echo number_format(rand(1,99),2); ?>%</td>
-											<td class="text-success wd-150px">+<?php echo number_format(rand(1,99),2); ?>%</td>
-										</tbody>
-									</table>
-								</td>
-
-								<td class="text-black">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>4 Marla</th>
-											<th>8 Marla</th>
-											<th>1 Kanal</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table text-center b-lr">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="b-lr table text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-
-
-								<td class="b3-lr">
-									<table  class="table text-center">
-										<thead class="text-info noneMe">
-											<th>125 Sq Yds</th>
-											<th>200 Sq Yds</th>
-											<th>250 Sq Yds</th>
-											<th>300 Sq Yds</th>
-											<th>500 Sq Yds</th>
-											<th>1000 Sq Yds</th>
-										</thead>
-										<tbody>
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-
-											<td class="text-success b-r">
-												<table class="table b-lr text-center">
-													<thead class="text-dark noneMe">
-														<th class="cw-30">Min</th>
-														<th class="cw-10"></th>
-														<th class="cw-30">Max</th>
-													</thead>
-													<tbody>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-														<td class="cw-10">-</td>
-														<td class="text-black cw-30"><?php echo number_format(rand(100000,999999)); ?></td>
-													</tbody>
-												</table>
-											</td>
-										</tbody>
-									</table>
-								</td>
-							
-                        	</tr>
-
 
                     	</tbody>
                		</table>
@@ -4347,60 +3309,14 @@ include("inc/header.php");
 
 
 
+
 <?php include("inc/footer.php");?>
 
 <script>
-// $(document).ready(function () {
-//     var $horizontal = $('#horizontal');
-
-//     $(window).scroll(function () {
-//         var s = $(this).scrollTop(),
-//             d = $(document).height(),
-//             c = $(this).height();
-
-//         scrollPercent = (s / (d - c));
-
-//         var position = (scrollPercent * ($(document).width() - $horizontal.width()));
-//         console.log("s: "+s);
-// 		console.log("d: "+d);
-// 		console.log("c: "+c);
-// 	    $horizontal.css({
-//             'left': position
-//         });
-//     });
-// });
-
-
-var lastScrollLeft = 0;
-$(window).scroll(function() {
-    var documentScrollLeft = $(document).scrollLeft();
-    if (lastScrollLeft != documentScrollLeft) {
-        console.log('scroll x');
-        lastScrollLeft = documentScrollLeft;
-
-		var s = lastScrollLeft,
-			d = $(document).width(),
-            c = $(this).width();
-		
-			scrollPercent = (s / ((d - c)+400));
-		
-
-		var $horizontal = $('#horizontal');
-		var position = (scrollPercent * ($(document).width() - $horizontal.width()));
-
-		$horizontal.css({
-            'left': position
-        });
-		console.log(position);
-		console.log("d: "+d);
-    }
-});
-
-$(document).ready(function($) {
-    $(".table-row").click(function() {
+	$(document).ready(function($) {
+    $(".table-row").dblclick(function() {
         window.document.location = $(this).data("href");
+		// alert("DBL CLicked");
     });
 });
-
-
 </script>
