@@ -440,8 +440,8 @@ function getDenominationsValuesForAddProject($denominationTypeId,$projectSubSubS
         echo "
         <div class='col-md-3'>
             <div class='custom-control custom-checkbox mb-2 check-xs'>
-                <input type='checkbox's name='denominationValueOfSubSubSector".$projectSubSubSectorDataId."[]' value='".$gDVResult['plot_den_id']."' class='custom-control-input' id='denominationvalue".$o.$denominationTypeId.$l."'>
-				<label class='custom-control-label' for='denominationvalue".$o.$denominationTypeId.$l."' >".$gDVResult['plot_den']." ".replaceUnitfromIdToName($gDVResult['unit'])."</label>
+                <input type='checkbox's checked name='denominationValueOfSubSubSector".$projectSubSubSectorDataId."[]' value='".$gDVResult['plot_den_id']."' class='custom-control-input' id='denominationvalue".$o.$denominationTypeId.$l."'>
+				<label class='custom-control-label' for='denominationvalue".$o.$denominationTypeId.$l."'>".$gDVResult['plot_den']." ".replaceUnitfromIdToName($gDVResult['unit'])."</label>
 			</div>";
            
             getDenominationStatusToggle($projectSubSubSectorDataId);
@@ -1528,6 +1528,397 @@ function getProjectSectorAvgPriceDataTable($projectDataId,$sectorId){
     }
 
 }
+
+
+
+
+
+
+
+// new Tabular layout 
+
+
+// Admin Dashboard 
+
+
+// getting commercial deno 
+function getCommercialTableMinMax(){
+
+    include("connection.php");
+
+    // fetching projects form DB 
+
+    $getComDenoQuery = "SELECT * FROM `plot_denomination` WHERE plot_type = 2";
+    $getComDenoData = mysqli_query($conn,$getComDenoQuery);
+
+    echo "
+        <table  class='table text-center'>
+			<thead class='text-white bg-myprimary'>";
+
+    while($getComDenoResult = mysqli_fetch_assoc($getComDenoData)){
+        echo "<th>".$getComDenoResult['plot_den']." ".replaceUnitfromIdToName($getComDenoResult['unit'])."</th>";
+    }
+
+    echo "</thead>
+            <tbody>";
+
+            for ($i=0; $i < mysqli_num_rows($getComDenoData); $i++) { 
+        echo "
+        <td class='text-success b-r'>
+            <table class='table text-center b-lr'>
+                <thead class='text-white'>
+                    <th class='cw-30'>Min</th>
+                    <th class='cw-10'></th>
+                    <th class='cw-30'>Max</th>
+                </thead>
+            </table>
+        </td>";
+    }
+                    
+    echo            "</tbody>
+        </table>";
+}
+// getting commercial deno end
+
+
+
+// getting residential deno 
+function getResidentialTableMinMax(){
+
+    include("connection.php");
+
+    // fetching projects form DB 
+
+    $getComDenoQuery = "SELECT * FROM `plot_denomination` WHERE plot_type = 1";
+    $getComDenoData = mysqli_query($conn,$getComDenoQuery);
+
+    echo "
+        <table  class='table text-center'>
+			<thead class='text-white bg-myprimary'>";
+
+    while($getComDenoResult = mysqli_fetch_assoc($getComDenoData)){
+        echo "<th>".$getComDenoResult['plot_den']." ".replaceUnitfromIdToName($getComDenoResult['unit'])."</th>";
+    }
+
+    echo "</thead>
+            <tbody>";
+
+            for ($i=0; $i < mysqli_num_rows($getComDenoData); $i++) { 
+        echo "
+        <td class='text-success b-r'>
+            <table class='table text-center b-lr'>
+                <thead class='text-white'>
+                    <th class='cw-30'>Min</th>
+                    <th class='cw-10'></th>
+                    <th class='cw-30'>Max</th>
+                </thead>
+            </table>
+        </td>";
+    }
+                    
+    echo            "</tbody>
+        </table>";
+}
+// getting residential deno end
+
+
+// getting main table 
+function getDetailedProjectsForAdminDashboard(){
+
+    include("connection.php");
+
+    // fetching projects form DB 
+
+
+    $getProjectsQuery = "SELECT * FROM `projects`";
+    $getProjectsData = mysqli_query($conn,$getProjectsQuery);
+
+    $i = 0;
+    while($getProjectsResult = mysqli_fetch_assoc($getProjectsData)){
+        echo "<div class='col-lg-12'>
+        <div class='card'>
+            <div class='card-header bg-mydark'>
+                <h3 class='card-title text-white fs-28'>".$getProjectsResult['project_name']."</h3>
+				<button type='button' class='btn light btn-success' data-toggle='modal' data-target='#analyticsModal'>Analytics</button>
+
+            </div>
+            <div class='card-body'>
+                <div class='table-responsive'>
+                	<table class='table b-b table-responsive-md text-center' id='table".$i."'>
+                    	<thead class='b-tlr myHeader'>
+                        	<tr class='text-white bg-myblue'>
+								<th>Project</th>
+								<th>City</th>
+                            	<th>Performance</th>
+                            	<th class='bg-info'>Commercial Plots</th>
+                            	<th class='bg-warning'>Residential Plots</th>
+								<th>Last Updated</th>
+							</tr>
+							<tr class='borderTop table-row' data-href='projectdata_tab.php'>
+								<th class='b3-lr text-left bg-myprimary' style='border-right:1px solid #fff !important;'></th> 
+								<th class='b3-lr text-left bg-myprimary' style='border-right:1px solid #fff !important;'></th> 
+								<th class='b3-lr bg-myprimary' style='border-right:1px solid #fff !important;'>
+									<table  class='table text-center'>
+										<thead class='text-white'>
+											<tr>
+											<th>1 W</th>
+											<th>1 M</th>
+											<th>3 M</th>
+											<th>6 M</th>
+											<th>1 Y</th>
+											</tr>
+										</thead>
+									</table>
+								</th>
+
+								<th class='text-black bg-myprimary' style='border-right:1px solid #fff !important;'>";
+                                    getCommercialTableMinMax();
+								echo "</th>
+
+                                <th class='text-black bg-myprimary' style='border-right:1px solid #fff !important;'>";
+                                getResidentialTableMinMax();
+								echo "</th>
+
+								<th class='b3-lr bg-myprimary'></th>
+							
+                        	</tr>
+                    	</thead>
+                    	<tbody>
+                        	<tr class='borderTop table-row' data-href='projectdata_tab.php'>
+								<td class='b3-lr text-left'>DHA Karachi (Phase 1 to 8)</td> 
+								<td class='b3-lr text-left'>Karachi</td> 
+								<td class='b3-lr'>
+									<table  class='table text-center'>
+										<thead class='text-white noneMe'>
+											<tr>
+											<th>1 W</th>
+											<th>1 M</th>
+											<th>3 M</th>
+											<th>6 M</th>
+											<th>1 Y</th>
+											</tr>
+										</thead>
+										<tbody>
+										<tr class='mt-2'>
+											<td class='text-success wd-150px'>+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class='text-danger wd-150px'>-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class='text-success wd-150px'>+<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class='text-danger wd-150px'>-<?php echo number_format(rand(1,99),1); ?>%</td>
+											<td class='text-success wd-150px'>+<?php echo number_format(rand(1,99),1); ?>%</td>
+										</tr>
+										</tbody>
+									</table>
+								</td>
+
+								<td class='text-black'>
+									<table  class='table text-center'>
+										<thead class='text-white noneMe'>
+											<th>4 Marla</th>
+											<th>8 Marla</th>
+											<th>1 Kanal</th>
+										</thead>
+										<tbody>
+											<td class='text-success b-r'>
+												<table class='table text-center b-lr'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='b-lr table text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='b-lr table text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+										</tbody>
+									</table>
+								</td>
+
+
+								<td class='b3-lr'>
+									<table  class='table text-center'>
+										<thead class='text-white noneMe'>
+											<th>125 Sq Yds</th>
+											<th>200 Sq Yds</th>
+											<th>250 Sq Yds</th>
+											<th>300 Sq Yds</th>
+											<th>500 Sq Yds</th>
+											<th>1000 Sq Yds</th>
+										</thead>
+										<tbody>
+											<td class='text-success b-r'>
+												<table class='table b-lr text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='table b-lr text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='table b-lr text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='table b-lr text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='table b-lr text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+
+											<td class='text-success b-r'>
+												<table class='table b-lr text-center'>
+													<thead class='text-dark noneMe'>
+														<th class='cw-30'>Min</th>
+														<th class='cw-10'></th>
+														<th class='cw-30'>Max</th>
+													</thead>
+													<tbody>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+														<td class='cw-10'>-</td>
+														<td class='text-black cw-30'><?php echo number_format(rand(100000,999999)); ?></td>
+													</tbody>
+												</table>
+											</td>
+										</tbody>
+									</table>
+								</td>
+
+								<td class='text-black'>26 April 2022</td>
+							
+                        	</tr>
+                    	</tbody>
+               		</table>
+            	</div>
+        	</div>
+    	</div>
+	</div>";
+
+    echo '
+    <script>
+        function selectedRow'.$i.'(){
+
+            var index,
+                table = document.getElementById("table'.$i.'");
+        
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                table.rows[i].onclick = function()
+                {
+                     // remove the background from the previous selected row
+                    if(typeof index !== "undefined"){
+                       table.rows[index].classList.toggle("selectedRow");
+                    }
+                    console.log(typeof index);
+                    // get the selected row index
+                    index = this.rowIndex;
+                    // add class selected to the row
+                    this.classList.toggle("selectedRow");
+                    console.log(typeof index);
+                 };
+            }
+
+        }
+        selectedRow'.$i.'();
+
+    </script>';
+        
+    }
+
+}
+
+// getting main table end 
+
+// Admin Dashboard 
+
+
 
 
 ?>

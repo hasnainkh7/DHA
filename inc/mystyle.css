@@ -85,8 +85,16 @@
     background-color: #1a1a1a !important;
 }
 
+.bg_LightGray{
+    background-color: #3d3d3d !important;
+}
+
+.bg_LighterGray{
+    background-color: #767474 !important;
+}
+
 .bg-myprimary{
-    background-color: #227538 !important;
+    background-color: #2BC155 !important;
 }
 
 .bg-myblue{
@@ -108,4 +116,28 @@
 
 .nav-header{
     z-index: 10 !important;
+}
+
+.One_purple{
+    background-color: #32064A !important;
+}
+
+.One_DarkGray{
+    background-color: #292930 !important;
+}
+
+.One_Green{
+    background-color: #3EB650 !important;
+}
+
+.One_DarkYellow{
+    background-color: #FCC133 !important;
+}
+
+.One_Red{
+    background-color: #0275a4 !important;
+}
+
+.One_DarkBlue{
+    background-color: #2A3166 !important;
 }

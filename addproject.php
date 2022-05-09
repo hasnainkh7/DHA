@@ -28,6 +28,10 @@ include("inc/header.php");
                                                     <?php getLocationsSelect();?>
                                                 </select>
                                             </div>
+                                            <div class="form-group col-md-12">
+                                                <label>Description</label>
+                                                <textarea name="description" cols="30" rows="10" class="form-control"></textarea>
+                                            </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Next Step</button>
                                     </form>

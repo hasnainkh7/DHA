@@ -1,5 +1,5 @@
 <?php
-$curPpageTitle = "Dashboard"; 
+$curPpageTitle = "EstateValue.pk"; 
 include("inc/header.php");
 ?>
 
@@ -14,14 +14,15 @@ include("inc/header.php");
 	}
 </style>
 
-
+<?php
+	// getDetailedProjectsForAdminDashboard();
+?>
 
 <div class="row">	
 	<div class="col-lg-12">
         <div class="card">
             <div class="card-header bg-mydark">
                 <h3 class="card-title text-white fs-28">Defence Housing Authority</h3>
-				<small class="text-white"><b>Last Updated:</b> 13 April 2022</small>
 				<button type="button" class="btn light btn-success" data-toggle="modal" data-target="#analyticsModal">Analytics</button>
 
             </div>
@@ -29,18 +30,18 @@ include("inc/header.php");
                 <div class="table-responsive">
                 	<table class="table b-b table-responsive-md text-center" id="table">
                     	<thead class="b-tlr myHeader">
-                        	<tr class="text-white bg-myblue">
+                        	<tr class="text-white bg-myprimary">
 								<th>Project</th>
 								<th>City</th>
                             	<th>Performance</th>
-                            	<th class="bg-info">Commercial Plots</th>
-                            	<th class="bg-warning">Residential Plots</th>
-								<th>Last Updated</th>
+                            	<th class="">Commercial Plots</th>
+                            	<th class="">Residential Plots</th>
+								<th>Updated</th>
 							</tr>
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
-								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
-								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
-								<th class="b3-lr bg-myprimary" style="border-right:1px solid #fff !important;">
+								<th class="b3-lr text-left bg_LighterGray" style="border-right:1px solid #fff !important;"></th> 
+								<th class="b3-lr text-left bg_LighterGray" style="border-right:1px solid #fff !important;"></th> 
+								<th class="b3-lr bg_LighterGray" style="border-right:1px solid #fff !important;">
 									<table  class="table text-center">
 										<thead class="text-white">
 											<tr>
@@ -54,9 +55,9 @@ include("inc/header.php");
 									</table>
 								</th>
 
-								<th class="text-black bg-myprimary" style="border-right:1px solid #fff !important;">
+								<th class="text-black bg_LighterGray" style="border-right:1px solid #fff !important;">
 									<table  class="table text-center">
-										<thead class="text-white bg-myprimary">
+										<thead class="text-white">
 											<th>4 Marla</th>
 											<th>8 Marla</th>
 											<th>1 Kanal</th>
@@ -96,7 +97,7 @@ include("inc/header.php");
 								</th>
 
 
-								<th class="b3-lr bg-myprimary" style="border-right:1px solid #fff !important;">
+								<th class="b3-lr bg_LighterGray" style="border-right:1px solid #fff !important;">
 									<table  class="table text-center">
 										<thead class="text-white">
 											<th>125 Sq Yds</th>
@@ -169,7 +170,7 @@ include("inc/header.php");
 										</tbody>
 									</table>
 								</th>
-								<th class="b3-lr bg-myprimary"></th>
+								<th class="b3-lr bg_LighterGray"></th>
 							
                         	</tr>
                     	</thead>
@@ -200,7 +201,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-white noneMe">
 											<th>4 Marla</th>
@@ -257,7 +258,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-white noneMe">
 											<th>125 Sq Yds</th>
@@ -387,7 +388,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -444,7 +445,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -574,7 +575,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -631,7 +632,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -761,7 +762,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -818,7 +819,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -948,7 +949,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -1005,7 +1006,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -1135,7 +1136,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -1192,7 +1193,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -1322,7 +1323,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -1379,7 +1380,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -1509,7 +1510,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -1566,7 +1567,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -1696,7 +1697,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -1753,7 +1754,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -1883,7 +1884,7 @@ include("inc/header.php");
 									</table>
 								</td>
 
-								<td class="text-black">
+								<td class="text-black Bg_lightgreen">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>4 Marla</th>
@@ -1940,7 +1941,7 @@ include("inc/header.php");
 								</td>
 
 
-								<td class="b3-lr">
+								<td class="b3-lr Bg_lightyellow">
 									<table  class="table text-center">
 										<thead class="text-info noneMe">
 											<th>125 Sq Yds</th>
@@ -2057,27 +2058,27 @@ include("inc/header.php");
 	<div class="col-lg-12">
         <div class="card">
             <div class="card-header bg-mydark">
-                <h3 class="card-title text-white fs-28">Army Officers Housing Society</h3>
-				<small class="text-white"><b>Last Updated:</b> 13 April 2022</small>
+                <h3 class="card-title text-white fs-28">Army Officers Housing Scheme</h3>
+				<small class="text-white"><b>Updated:</b> 13 April 2022</small>
 				<button type="button" class="btn light btn-success" data-toggle="modal" data-target="#analyticsModal">Analytics</button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                 	<table class="table b-b table-responsive-md text-center" id="table">
                     	<thead class="b-tlr">
-                        	<tr class="text-white bg-myblue">
+                        	<tr class="text-white bg-myprimary">
 								<th>Project</th>
 								<th>City</th>
                             	<th>Performance</th>
-                            	<th class="bg-info">Type</th>
-								<th>Last Updated</th>
+                            	<th class="">Type</th>
+								<th>Updated</th>
 							</tr>
 							<tr class="borderTop table-row" data-href="projectdata_tab.php">
-								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
-								<th class="b3-lr text-left bg-myprimary" style="border-right:1px solid #fff !important;"></th> 
-								<th class="b3-lr bg-myprimary" style="border-right:1px solid #fff !important;">
+								<th class="b3-lr text-left bg_LighterGray" style="border-right:1px solid #fff !important;"></th> 
+								<th class="b3-lr text-left bg_LighterGray" style="border-right:1px solid #fff !important;"></th> 
+								<th class="b3-lr bg_LighterGray" style="border-right:1px solid #fff !important;">
 									<table  class="table text-center">
-										<thead class="text-white bg-myprimary">
+										<thead class="text-white bg_LighterGray">
 											<th>1 W</th>
 											<th>1 M</th>
 											<th>3 M</th>
@@ -2087,9 +2088,9 @@ include("inc/header.php");
 									</table>
 								</th>
 
-								<th class="text-black bg-myprimary">
+								<th class="text-black bg_LighterGray">
 									<table  class="table text-center">
-										<thead class="text-white bg-myprimary">
+										<thead class="text-white bg_LighterGray">
 											<th>SU House</th>
 											<th>SD House</th>
 											<th>4 Bed Apartment</th>
@@ -2138,7 +2139,7 @@ include("inc/header.php");
 									</table>
 								</th>
 
-								<th class=" bg-myprimary"></th>
+								<th class="bg_LighterGray"></th>
                         	</tr>
                     	</thead>
                     	<tbody>

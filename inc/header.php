@@ -37,9 +37,9 @@ if($_SESSION["userData"]['role'] == 2){
             </a> -->
 
             <a href="index.php" class="brand-logo">
-                <img class="logo-abbr" src="./images/logo3.png" alt="" style="border-radius:50%;">
-                <img class="logo-compact" src="./images/logo3.png" alt="" style="border-radius:50%;">
-                <img class="brand-title" src="./images/logo-text2.png" alt="">
+                <img class="logo-abbr" src="./images/logo4.png" alt="" style="border-radius:50%;">
+                <img class="logo-compact" src="./images/logo4.png" alt="" style="border-radius:50%;">
+                <img class="brand-title" src="./images/logo-text3.jpeg" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger is-active">
